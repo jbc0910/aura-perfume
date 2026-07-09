@@ -209,12 +209,103 @@ import Layout from '../layouts/Layout.astro';
   </section>
 
   <!-- ══════════════════════════════════════════════════════
-       2. TRUST / SOCIAL PROOF
+       2. CATÁLOGO DESTACADO (LOS MÁS VENDIDOS)
+       ════════════════════════════════════════════════════ -->
+  <section
+    id="virales"
+    aria-label="Perfumes más vendidos y virales de TikTok en Uruguay"
+    style="background:var(--color-white); padding-block:var(--section-py);"
+  >
+    <div class="container">
+      <div style="display:grid; grid-template-columns:1fr 1.5fr; gap:4rem; align-items:center;">
+
+        <div>
+          <p class="section-label fade-in" style="margin-bottom:1rem;">Los más vendidos</p>
+          <h2 class="fade-in-up" style="margin-bottom:1.5rem;">
+            Fragancias virales<br/>
+            <em style="color:var(--color-rose-deep); font-style:italic;">más buscadas en Uruguay</em>
+          </h2>
+          <p class="fade-in-up" style="color:var(--color-text-muted); line-height:1.8; margin-bottom:2rem;">
+            Los perfumes más solicitados por su alta duración y proyección. Comprá original con envío rápido a todo Uruguay desde Paysandú.
+          </p>
+          <div class="fade-in" style="display:flex; flex-direction:column; gap:0.8rem;">
+            <a href="/perfumes-arabes" class="btn-primary" title="Ver catálogo completo de Perfumes Árabes" style="justify-content:center;">
+              <span>Catálogo Perfumes Árabes</span>
+            </a>
+            <a href="/perfumes-disenador" class="btn-secondary" title="Ver catálogo completo de Perfumes de Diseñador" style="justify-content:center; border-color:var(--color-rose-deep); color:var(--color-rose-deep);">
+              <span>Catálogo De Diseñador</span>
+            </a>
+            <a href="https://www.tiktok.com/@velntina.manggini" target="_blank" rel="noopener noreferrer"
+              title="Ver reseñas de perfumes en TikTok de Valentina Manggini"
+              style="
+                display:inline-flex; align-items:center; justify-content:center; gap:0.7rem;
+                font-size:0.85rem; font-weight:500;
+                color:var(--color-charcoal);
+                padding:0.8rem 1.2rem;
+                border:1px solid var(--color-border);
+                transition:var(--transition);
+              "
+              onmouseover="this.style.borderColor='#fe2c55'; this.style.color='#fe2c55';"
+              onmouseout="this.style.borderColor='var(--color-border)'; this.style.color='var(--color-charcoal)';"
+            >
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.75a4.85 4.85 0 0 1-1.01-.06z"/>
+              </svg>
+              Reseñas en TikTok
+            </a>
+          </div>
+        </div>
+
+        <!-- Grid de perfumes virales -->
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
+          {[
+            { name: 'Lattafa Yara', tipo: 'Árabe Viral', nota: 'Dulce, floral', badge: 'Agotándose' },
+            { name: 'Maison Alhambra', tipo: 'Árabe Premium', nota: 'Amaderado, especiado', badge: 'Disponible' },
+            { name: 'Club de Nuit', tipo: 'Inspirado', nota: 'Fresco, masculino', badge: 'Disponible' },
+            { name: 'Khamrah', tipo: 'Árabe Intenso', nota: 'Oriental, dulce', badge: 'Último stock' },
+          ].map((p, i) => (
+            <div class="fade-in-up" style={`
+              background:var(--color-cream);
+              border:1px solid var(--color-border);
+              padding:1.5rem;
+              transition:var(--transition);
+              animation-delay:${i * 0.1}s;
+            `}>
+              <div style="
+                width:100%; height:80px;
+                background:linear-gradient(135deg, var(--color-blush), var(--color-nude-dark));
+                margin-bottom:1rem;
+                display:flex; align-items:center; justify-content:center;
+                color:var(--color-rose-deep);
+              ">
+                <svg width="32" height="32" viewBox="0 0 100 120" fill="currentColor" aria-hidden="true">
+                  <rect x="38" y="2" width="24" height="10" rx="2" opacity="0.6"/>
+                  <rect x="44" y="12" width="12" height="8" opacity="0.4"/>
+                  <rect x="20" y="20" width="60" height="80" rx="8" opacity="0.2" stroke="currentColor" stroke-opacity="0.4" stroke-width="2"/>
+                </svg>
+              </div>
+              <p style="
+                font-size:0.65rem; font-weight:700; letter-spacing:0.12em;
+                text-transform:uppercase;
+                color:${p.badge === 'Agotándose' || p.badge === 'Último stock' ? 'var(--color-rose-deep)' : 'var(--color-text-muted)'};
+                margin-bottom:0.3rem;
+              ">{p.badge}</p>
+              <h4 style="font-size:0.95rem; margin-bottom:0.2rem;">{p.name}</h4>
+              <p style="font-size:0.75rem; color:var(--color-text-muted);">{p.nota}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════
+       3. TRUST / SOCIAL PROOF
        ════════════════════════════════════════════════════ -->
   <section
     id="confianza"
     aria-label="Razones para confiar en Aura Perfumes"
-    style="background:var(--color-white); padding-block:var(--section-py);"
+    style="background:var(--color-cream); padding-block:var(--section-py);"
   >
     <div class="container">
       <div style="text-align:center; margin-bottom:4rem;">
@@ -458,97 +549,7 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </section>
 
-  <!-- ══════════════════════════════════════════════════════
-       4. SECCIÓN: Virales de TikTok / Favoritos
-       ════════════════════════════════════════════════════ -->
-  <section
-    id="virales"
-    aria-label="Perfumes virales de TikTok disponibles en Uruguay"
-    style="background:var(--color-white); padding-block:var(--section-py);"
-  >
-    <div class="container">
-      <div style="display:grid; grid-template-columns:1fr 1.5fr; gap:4rem; align-items:center;">
-
-        <div>
-          <p class="section-label fade-in" style="margin-bottom:1rem;">Tendencia</p>
-          <h2 class="fade-in-up" style="margin-bottom:1.5rem;">
-            Los favoritos de<br/>
-            <em style="color:var(--color-rose-deep); font-style:italic;">TikTok, ahora en Uruguay</em>
-          </h2>
-          <p class="fade-in-up" style="color:var(--color-text-muted); line-height:1.8; margin-bottom:2rem;">
-            Los perfumes que se viralizaron en TikTok y que todos quieren tener, disponibles en Paysandú con envío a todo Uruguay. Seguí a <strong>@velntina.manggini</strong> para ver las reseñas honestas.
-          </p>
-          <div class="fade-in" style="display:flex; flex-direction:column; gap:0.8rem;">
-            <a href="https://www.tiktok.com/@velntina.manggini" target="_blank" rel="noopener noreferrer"
-              title="Ver reseñas de perfumes en TikTok de Valentina Manggini"
-              style="
-                display:inline-flex; align-items:center; gap:0.7rem;
-                font-size:0.85rem; font-weight:500;
-                color:var(--color-charcoal);
-                padding:0.8rem 1.2rem;
-                border:1px solid var(--color-border);
-                transition:var(--transition);
-              "
-              onmouseover="this.style.borderColor='#fe2c55'; this.style.color='#fe2c55';"
-              onmouseout="this.style.borderColor='var(--color-border)'; this.style.color='var(--color-charcoal)';"
-            >
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.75a4.85 4.85 0 0 1-1.01-.06z"/>
-              </svg>
-              @velntina.manggini — Ver reseñas
-            </a>
-            <a href="https://wa.me/59899373372?text=Hola%2C%20quiero%20saber%20qué%20perfumes%20virales%20de%20TikTok%20tienen%20disponibles"
-              target="_blank" rel="noopener noreferrer"
-              class="btn-primary"
-              title="Consultar perfumes virales disponibles"
-            >
-              <span>Consultar disponibilidad</span>
-            </a>
-          </div>
-        </div>
-
-        <!-- Grid de perfumes virales -->
-        <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
-          {[
-            { name: 'Lattafa Yara', tipo: 'Árabe Viral', nota: 'Dulce, floral', badge: 'Agotándose' },
-            { name: 'Maison Alhambra', tipo: 'Árabe Premium', nota: 'Amaderado, especiado', badge: 'Disponible' },
-            { name: 'Club de Nuit', tipo: 'Inspirado', nota: 'Fresco, masculino', badge: 'Disponible' },
-            { name: 'Khamrah', tipo: 'Árabe Intenso', nota: 'Oriental, dulce', badge: 'Último stock' },
-          ].map((p, i) => (
-            <div class="fade-in-up" style={`
-              background:var(--color-cream);
-              border:1px solid var(--color-border);
-              padding:1.5rem;
-              transition:var(--transition);
-              animation-delay:${i * 0.1}s;
-            `}>
-              <div style="
-                width:100%; height:80px;
-                background:linear-gradient(135deg, var(--color-blush), var(--color-nude-dark));
-                margin-bottom:1rem;
-                display:flex; align-items:center; justify-content:center;
-                color:var(--color-rose-deep);
-              ">
-                <svg width="32" height="32" viewBox="0 0 100 120" fill="currentColor" aria-hidden="true">
-                  <rect x="38" y="2" width="24" height="10" rx="2" opacity="0.6"/>
-                  <rect x="44" y="12" width="12" height="8" opacity="0.4"/>
-                  <rect x="20" y="20" width="60" height="80" rx="8" opacity="0.2" stroke="currentColor" stroke-opacity="0.4" stroke-width="2"/>
-                </svg>
-              </div>
-              <p style="
-                font-size:0.65rem; font-weight:700; letter-spacing:0.12em;
-                text-transform:uppercase;
-                color:{p.badge === 'Agotándose' || p.badge === 'Último stock' ? 'var(--color-rose-deep)' : 'var(--color-text-muted)'};
-                margin-bottom:0.3rem;
-              ">{p.badge}</p>
-              <h4 style="font-size:0.95rem; margin-bottom:0.2rem;">{p.name}</h4>
-              <p style="font-size:0.75rem; color:var(--color-text-muted);">{p.nota}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-  </section>
+  <!-- Sección virales de TikTok / Más vendidos movida arriba de confianza -->
 
   <!-- ══════════════════════════════════════════════════════
        5. CTA SECTION
