@@ -4,7 +4,7 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout
   title="Perfumes Originales en Uruguay — Aura Perfumes Paysandú"
-  description="Aura Perfumes en Paysandú, Uruguay. Perfumes árabes originales, fragancias de diseñador y decants con envío a todo el país. Encontrá tu fragancia ideal. WhatsApp: 099 373 372."
+  description="Aura Perfumes en Paysandú, Uruguay. Perfumes árabes originales y fragancias de diseñador 100% auténticas con envío a todo el país. Encontrá tu fragancia ideal. WhatsApp: 099 373 372."
   canonical="https://auraperfumes.uy/"
 >
 
@@ -82,7 +82,7 @@ import Layout from '../layouts/Layout.astro';
             max-width:44ch;
             margin-bottom:2.5rem;
           ">
-            Fragancias árabes de alta duración, perfumes de diseñador 100% originales y decants premium. Envíos a todo Uruguay desde Paysandú.
+            Fragancias árabes de alta duración y perfumes de diseñador 100% originales. Envíos a todo Uruguay desde Paysandú.
           </p>
 
           <div class="fade-in-up" style="display:flex; flex-wrap:wrap; gap:1rem; align-items:center;">
@@ -373,9 +373,9 @@ import Layout from '../layouts/Layout.astro';
             {
               name: 'Sofía L.',
               location: 'Paysandú',
-              text: 'Compré un decant para probar antes de invertir en la botella grande. Ahora quiero la botella entera. Excelente servicio.',
+              text: 'Primera compra online y quedé encantada. Valentina me asesoro perfectamente para elegir mi fragancia. La calidad es increible.',
               stars: 5,
-              product: 'Decant Premium',
+              product: 'Perfume de Diseñador',
             },
           ].map(t => (
             <div class="testimonial-card fade-in-up">
@@ -430,7 +430,7 @@ import Layout from '../layouts/Layout.astro';
         </p>
       </div>
 
-      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:2rem;">
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:2rem; max-width:900px; margin-inline:auto;">
 
         <!-- Card Perfumes Árabes -->
         <a href="/catalogo#arabe" class="product-card fade-in-up" title="Comprar perfumes árabes originales en Uruguay" style="display:block; text-decoration:none;">
@@ -506,41 +506,6 @@ import Layout from '../layouts/Layout.astro';
               text-transform:uppercase; color:var(--color-rose-deep);
             ">
               Ver fragancias
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </span>
-          </div>
-        </a>
-
-        <!-- Card Decants -->
-        <a href="/catalogo#decant" class="product-card fade-in-up" title="Decants y muestras de perfumes en Uruguay" style="display:block; text-decoration:none;">
-          <div style="
-            height:220px;
-            background:linear-gradient(135deg, #1a0d10 0%, #2d1520 50%, #1a1010 100%);
-            position:relative;
-            overflow:hidden;
-            display:flex; align-items:center; justify-content:center;
-          ">
-            <span class="badge" style="background:var(--color-gold); color:#1a1a1a;">Probar antes</span>
-            <div style="text-align:center; color:var(--color-rose);">
-              <svg width="55" height="70" viewBox="0 0 60 90" fill="none" aria-hidden="true">
-                <rect x="25" y="0" width="10" height="8" rx="2" fill="currentColor" opacity="0.6"/>
-                <rect x="27" y="8" width="6" height="6" fill="currentColor" opacity="0.4"/>
-                <rect x="10" y="14" width="40" height="65" rx="6" fill="currentColor" opacity="0.15" stroke="currentColor" stroke-opacity="0.4" stroke-width="1.5"/>
-              </svg>
-            </div>
-          </div>
-          <div style="padding:1.8rem;">
-            <p style="font-size:0.7rem; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; color:var(--color-rose-deep); margin-bottom:0.5rem;">Sin riesgo</p>
-            <h3 style="margin-bottom:0.8rem; font-size:1.4rem;">Decants & Muestras</h3>
-            <p style="font-size:0.88rem; color:var(--color-text-muted); line-height:1.7; margin-bottom:1.5rem;">
-              Probá antes de comprar la botella completa. Frascos pequeños para que descubras tu fragancia ideal sin invertir de más.
-            </p>
-            <span style="
-              display:inline-flex; align-items:center; gap:0.4rem;
-              font-size:0.78rem; font-weight:600; letter-spacing:0.1em;
-              text-transform:uppercase; color:var(--color-rose-deep);
-            ">
-              Consultar
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </span>
           </div>
@@ -646,8 +611,8 @@ import Layout from '../layouts/Layout.astro';
               a: 'Aceptamos transferencia bancaria, Mercado Pago, efectivo (para retiro en Paysandú) y coordinamos los detalles por WhatsApp. No aceptamos contra entrega por el momento.',
             },
             {
-              q: '¿Puedo probar el perfume antes de comprar la botella completa?',
-              a: 'Sí. Ofrecemos decants (muestras en frascos pequeños) para que puedas probar la fragancia antes de invertir en la botella entera. Consultanos cuáles están disponibles.',
+              q: '¿Puedo recibir asesoría personalizada antes de comprar?',
+              a: 'Por supuesto. Valentina te asesora personalmente por WhatsApp, explicándote cómo huele cada fragancia, cuánto dura y cuál se adapta mejor a tu personalidad y estilo.',
             },
           ].map((item, i) => (
             <div class="faq-item" itemscope itemtype="https://schema.org/Question">
