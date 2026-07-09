@@ -1,0 +1,423 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Preguntas Frecuentes y Contacto — Aura Perfumes Uruguay"
+  description="¿Preguntas sobre perfumes originales, envíos o métodos de pago en Uruguay? Respondemos todo en nuestra página de FAQ. Contactate por WhatsApp con Aura Perfumes Paysandú."
+  canonical="https://auraperfumes.uy/faq"
+>
+
+  <!-- ── HERO ─────────────────────────────────────────────────── -->
+  <section
+    aria-label="Preguntas frecuentes Aura Perfumes"
+    style="
+      background:linear-gradient(135deg, #1a0a0a 0%, #2d1515 100%);
+      padding-top:10rem; padding-bottom:5rem;
+    "
+  >
+    <div class="container" style="text-align:center;">
+      <p class="fade-in" style="
+        font-size:0.72rem; font-weight:600; letter-spacing:0.3em;
+        text-transform:uppercase; color:var(--color-gold); margin-bottom:1.5rem;
+        display:flex; align-items:center; justify-content:center; gap:0.75rem;
+      ">
+        <span style="width:2rem; height:1px; background:var(--color-gold); display:inline-block;"></span>
+        Resolvemos tus dudas
+        <span style="width:2rem; height:1px; background:var(--color-gold); display:inline-block;"></span>
+      </p>
+      <h1 class="fade-in-up" style="color:#FAF0E6; max-width:18ch; margin-inline:auto; margin-bottom:1.2rem;">
+        Preguntas Frecuentes
+      </h1>
+      <p class="fade-in-up" style="color:rgba(255,255,255,0.6); max-width:48ch; margin-inline:auto; line-height:1.8;">
+        Todo lo que necesitás saber sobre nuestros perfumes, envíos a Uruguay, métodos de pago y más.
+      </p>
+    </div>
+  </section>
+
+  <!-- ── FAQ COMPLETA ─────────────────────────────────────────── -->
+  <section
+    aria-label="Todas las preguntas frecuentes sobre Aura Perfumes Uruguay"
+    style="background:var(--color-white); padding-block:var(--section-py);"
+    itemscope
+    itemtype="https://schema.org/FAQPage"
+  >
+    <div class="container" style="max-width:800px;">
+
+      <!-- Productos y originalidad -->
+      <div style="margin-bottom:3rem;">
+        <h2 class="fade-in-up" style="font-size:1.2rem; margin-bottom:1.5rem; padding-bottom:1rem; border-bottom:1px solid var(--color-border);">
+          Sobre los perfumes
+        </h2>
+        <div class="fade-in-up">
+          {[
+            {
+              q: '¿Los perfumes son 100% originales?',
+              a: 'Sí, absolutamente. Todos nuestros perfumes son 100% originales y auténticos. Trabajamos con distribuidores oficiales y podemos mostrar facturas y certificados de autenticidad. Nunca vendemos imitaciones ni "dupes".',
+            },
+            {
+              q: '¿Cuánto duran los perfumes árabes en la piel?',
+              a: 'Nuestros perfumes árabes tienen concentraciones tipo "extrait de parfum", lo que les da una duración en piel de 8 a 12 horas promedio. En ropa pueden perdurar incluso días. Es su mayor diferencial frente a las fragancias occidentales convencionales.',
+            },
+            {
+              q: '¿Qué diferencia hay entre un perfume árabe y uno de diseñador occidental?',
+              a: 'Los perfumes árabes generalmente tienen una concentración de aceites esenciales mucho más alta, lo que se traduce en mayor duración y proyección. Además, sus notas suelen ser más intensas, especiadas y amaderadas. Los perfumes de diseñador occidental son más frescos y "wearable" para el día a día.',
+            },
+            {
+              q: '¿Qué son los decants y para qué sirven?',
+              a: 'Los decants son pequeños frascos de 5ml a 15ml que contienen el mismo perfume original pero en menor cantidad. Sirven para que puedas probar la fragancia antes de invertir en la botella completa. Es la forma perfecta de explorar nuevas fragancias sin gastar de más.',
+            },
+            {
+              q: '¿Tienen tienda física para oler los perfumes?',
+              a: 'Operamos principalmente de forma online desde Paysandú. Para clientas de la zona, podemos coordinar una visita. Para el resto del Uruguay, ofrecemos asesoría detallada por WhatsApp y la opción de pedir decants antes de comprar la botella entera.',
+            },
+          ].map((item, i) => (
+            <div class="faq-item" itemscope itemtype="https://schema.org/Question">
+              <button
+                class="faq-trigger"
+                aria-expanded="false"
+                id={`faq-prod-${i}`}
+                aria-controls={`faq-prod-a-${i}`}
+                itemprop="name"
+              >
+                {item.q}
+                <span class="faq-icon" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-content" id={`faq-prod-a-${i}`} role="region" aria-labelledby={`faq-prod-${i}`} itemscope itemtype="https://schema.org/Answer">
+                <div class="faq-inner" itemprop="text">{item.a}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Envíos y logística -->
+      <div style="margin-bottom:3rem;">
+        <h2 class="fade-in-up" style="font-size:1.2rem; margin-bottom:1.5rem; padding-bottom:1rem; border-bottom:1px solid var(--color-border);">
+          Envíos y logística en Uruguay
+        </h2>
+        <div class="fade-in-up">
+          {[
+            {
+              q: '¿Envían a todo Uruguay? ¿Cuánto demora el envío?',
+              a: 'Sí, enviamos a todo el territorio uruguayo desde Paysandú. Trabajamos con OCA, Correo Uruguayo y otros servicios de paquetería según la zona. El tiempo de entrega varía entre 2 y 5 días hábiles dependiendo del departamento de destino.',
+            },
+            {
+              q: '¿Cuánto cuesta el envío?',
+              a: 'El costo de envío varía según el destino y el peso del paquete. Lo calculamos al momento de hacer el pedido. Periódicamente ofrecemos promociones de envío bonificado o gratuito para compras que superen cierto monto. Consultanos para saber si hay alguna promoción activa.',
+            },
+            {
+              q: '¿Cómo llega empaquetado el perfume?',
+              a: 'Cada perfume se empaqueta con mucho cuidado para garantizar que llegue en perfecto estado. Usamos burbujas protectoras y cajas rígidas. Para regalos, podemos ofrecer una presentación especial.',
+            },
+          ].map((item, i) => (
+            <div class="faq-item" itemscope itemtype="https://schema.org/Question">
+              <button
+                class="faq-trigger"
+                aria-expanded="false"
+                id={`faq-env-${i}`}
+                aria-controls={`faq-env-a-${i}`}
+                itemprop="name"
+              >
+                {item.q}
+                <span class="faq-icon" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-content" id={`faq-env-a-${i}`} role="region" aria-labelledby={`faq-env-${i}`} itemscope itemtype="https://schema.org/Answer">
+                <div class="faq-inner" itemprop="text">{item.a}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Pagos -->
+      <div style="margin-bottom:3rem;">
+        <h2 class="fade-in-up" style="font-size:1.2rem; margin-bottom:1.5rem; padding-bottom:1rem; border-bottom:1px solid var(--color-border);">
+          Métodos de pago
+        </h2>
+        <div class="fade-in-up">
+          {[
+            {
+              q: '¿Qué métodos de pago aceptan?',
+              a: 'Aceptamos transferencia bancaria, Mercado Pago (tarjeta de crédito/débito), efectivo para retiro en Paysandú y BROU transferencia. Todos los detalles del pago se coordinan por WhatsApp antes de confirmar el pedido.',
+            },
+            {
+              q: '¿Puedo pagar contra entrega?',
+              a: 'Por el momento no ofrecemos la modalidad contra entrega. El pago debe realizarse antes del despacho. Entendemos que puede generar dudas, por eso les invitamos a revisar nuestros testimonios en Instagram y a consultarnos cualquier duda antes de comprar.',
+            },
+          ].map((item, i) => (
+            <div class="faq-item" itemscope itemtype="https://schema.org/Question">
+              <button
+                class="faq-trigger"
+                aria-expanded="false"
+                id={`faq-pago-${i}`}
+                aria-controls={`faq-pago-a-${i}`}
+                itemprop="name"
+              >
+                {item.q}
+                <span class="faq-icon" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-content" id={`faq-pago-a-${i}`} role="region" aria-labelledby={`faq-pago-${i}`} itemscope itemtype="https://schema.org/Answer">
+                <div class="faq-inner" itemprop="text">{item.a}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── 2. FORMULARIO DE CONTACTO ─────────────────────────────── -->
+  <section
+    id="contacto"
+    aria-label="Formulario de contacto Aura Perfumes Uruguay"
+    style="background:var(--color-cream); padding-block:var(--section-py);"
+  >
+    <div class="container">
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:5rem; align-items:start;">
+
+        <div>
+          <p class="section-label fade-in" style="margin-bottom:1rem;">Contacto directo</p>
+          <h2 class="fade-in-up" style="margin-bottom:1.5rem;">¿Tu consulta no está en el FAQ?</h2>
+          <p class="fade-in-up" style="color:var(--color-text-muted); line-height:1.8; margin-bottom:2.5rem;">
+            Escribinos directamente y Valentina te responde a la brevedad. También podés encontrarnos en nuestras redes.
+          </p>
+
+          <!-- Contactos adicionales -->
+          <div class="fade-in" style="display:flex; flex-direction:column; gap:1rem;">
+            <a
+              href="https://wa.me/59899373372?text=Hola%2C%20tengo%20una%20consulta%20sobre%20los%20perfumes"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="WhatsApp Aura Perfumes Uruguay"
+              style="
+                display:flex; align-items:center; gap:1rem;
+                padding:1.2rem 1.5rem;
+                background:var(--color-white);
+                border:1px solid var(--color-border);
+                transition:var(--transition);
+              "
+            >
+              <div style="color:#25D366; flex-shrink:0;">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                </svg>
+              </div>
+              <div>
+                <p style="font-size:0.78rem; font-weight:600; text-transform:uppercase; letter-spacing:0.1em; color:var(--color-text-muted); margin-bottom:0.2rem;">WhatsApp</p>
+                <p style="font-weight:500; font-size:0.95rem;">099 373 372</p>
+              </div>
+            </a>
+
+            <a
+              href="https://www.instagram.com/aurabellazayperfumes"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Instagram Aura Perfumes Uruguay"
+              style="
+                display:flex; align-items:center; gap:1rem;
+                padding:1.2rem 1.5rem;
+                background:var(--color-white);
+                border:1px solid var(--color-border);
+                transition:var(--transition);
+              "
+            >
+              <div style="color:#E1306C; flex-shrink:0;">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                  <rect x="2" y="2" width="20" height="20" rx="5"/>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                </svg>
+              </div>
+              <div>
+                <p style="font-size:0.78rem; font-weight:600; text-transform:uppercase; letter-spacing:0.1em; color:var(--color-text-muted); margin-bottom:0.2rem;">Instagram</p>
+                <p style="font-weight:500; font-size:0.95rem;">@aurabellazayperfumes</p>
+              </div>
+            </a>
+
+            <a
+              href="https://www.tiktok.com/@velntina.manggini"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="TikTok Valentina Manggini Aura Perfumes"
+              style="
+                display:flex; align-items:center; gap:1rem;
+                padding:1.2rem 1.5rem;
+                background:var(--color-white);
+                border:1px solid var(--color-border);
+                transition:var(--transition);
+              "
+            >
+              <div style="color:#010101; flex-shrink:0;">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.75a4.85 4.85 0 0 1-1.01-.06z"/>
+                </svg>
+              </div>
+              <div>
+                <p style="font-size:0.78rem; font-weight:600; text-transform:uppercase; letter-spacing:0.1em; color:var(--color-text-muted); margin-bottom:0.2rem;">TikTok</p>
+                <p style="font-weight:500; font-size:0.95rem;">@velntina.manggini</p>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Formulario -->
+        <div class="scale-in">
+          <form
+            id="contact-form"
+            aria-label="Formulario de consulta"
+            style="
+              background:var(--color-white);
+              border:1px solid var(--color-border);
+              padding:2.5rem;
+            "
+            onsubmit="handleFormSubmit(event)"
+          >
+            <h3 style="font-size:1.1rem; margin-bottom:2rem; font-family:var(--font-serif);">Envianos tu consulta</h3>
+
+            <div style="margin-bottom:1.5rem;">
+              <label for="nombre" style="display:block; font-size:0.8rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:0.5rem; color:var(--color-text-muted);">
+                Nombre *
+              </label>
+              <input
+                type="text"
+                id="nombre"
+                name="nombre"
+                required
+                placeholder="Tu nombre"
+                aria-required="true"
+                style="
+                  width:100%; padding:0.85rem 1rem;
+                  border:1px solid var(--color-border);
+                  background:var(--color-cream);
+                  font-family:var(--font-sans);
+                  font-size:0.95rem;
+                  color:var(--color-charcoal);
+                  transition:border-color var(--transition-fast);
+                  outline:none;
+                "
+              />
+            </div>
+
+            <div style="margin-bottom:1.5rem;">
+              <label for="email" style="display:block; font-size:0.8rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:0.5rem; color:var(--color-text-muted);">
+                Email *
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                placeholder="tu@email.com"
+                aria-required="true"
+                style="
+                  width:100%; padding:0.85rem 1rem;
+                  border:1px solid var(--color-border);
+                  background:var(--color-cream);
+                  font-family:var(--font-sans);
+                  font-size:0.95rem;
+                  color:var(--color-charcoal);
+                  transition:border-color var(--transition-fast);
+                  outline:none;
+                "
+              />
+            </div>
+
+            <div style="margin-bottom:1.5rem;">
+              <label for="perfume" style="display:block; font-size:0.8rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:0.5rem; color:var(--color-text-muted);">
+                ¿Qué tipo de fragancia te interesa?
+              </label>
+              <select
+                id="perfume"
+                name="perfume"
+                style="
+                  width:100%; padding:0.85rem 1rem;
+                  border:1px solid var(--color-border);
+                  background:var(--color-cream);
+                  font-family:var(--font-sans);
+                  font-size:0.95rem;
+                  color:var(--color-charcoal);
+                  outline:none;
+                "
+              >
+                <option value="">Seleccioná una opción</option>
+                <option value="arabe">Perfume árabe</option>
+                <option value="disenador">Perfume de diseñador</option>
+                <option value="decant">Decant / muestra</option>
+                <option value="regalo">Es un regalo</option>
+                <option value="otro">Otro</option>
+              </select>
+            </div>
+
+            <div style="margin-bottom:2rem;">
+              <label for="consulta" style="display:block; font-size:0.8rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:0.5rem; color:var(--color-text-muted);">
+                Tu consulta *
+              </label>
+              <textarea
+                id="consulta"
+                name="consulta"
+                required
+                rows="4"
+                placeholder="Contanos qué buscás, tus preferencias olfativas o cualquier duda..."
+                aria-required="true"
+                style="
+                  width:100%; padding:0.85rem 1rem;
+                  border:1px solid var(--color-border);
+                  background:var(--color-cream);
+                  font-family:var(--font-sans);
+                  font-size:0.95rem;
+                  color:var(--color-charcoal);
+                  resize:vertical;
+                  min-height:120px;
+                  outline:none;
+                "
+              ></textarea>
+            </div>
+
+            <button type="submit" class="btn-primary" style="width:100%; justify-content:center;">
+              <span>Enviar consulta por WhatsApp</span>
+            </button>
+
+            <p style="font-size:0.75rem; color:var(--color-text-muted); margin-top:1rem; text-align:center; line-height:1.6;">
+              Al enviar este formulario, serás redirigido a WhatsApp con tu consulta lista para enviar.
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<script>
+  function handleFormSubmit(e: Event) {
+    e.preventDefault();
+    const form = e.target as HTMLFormElement;
+    const nombre = (form.querySelector('#nombre') as HTMLInputElement).value;
+    const email = (form.querySelector('#email') as HTMLInputElement).value;
+    const perfume = (form.querySelector('#perfume') as HTMLSelectElement).value;
+    const consulta = (form.querySelector('#consulta') as HTMLTextAreaElement).value;
+
+    const msg = encodeURIComponent(
+      `Hola Aura Perfumes! Mi nombre es ${nombre}.\n\n` +
+      `Email: ${email}\n` +
+      `Tipo de fragancia: ${perfume || 'No especificado'}\n\n` +
+      `Consulta: ${consulta}`
+    );
+
+    window.open(`https://wa.me/59899373372?text=${msg}`, '_blank');
+  }
+</script>
+
+<style>
+  input:focus, textarea:focus, select:focus {
+    border-color: var(--color-rose) !important;
+  }
+
+  @media (max-width: 900px) {
+    section > .container > div[style*="grid-template-columns:1fr 1fr"] {
+      grid-template-columns: 1fr !important;
+    }
+  }
+</style>

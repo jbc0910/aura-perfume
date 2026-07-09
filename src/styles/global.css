@@ -1,0 +1,484 @@
+@import "tailwindcss";
+
+/* =====================================================
+   AURA PERFUMES — Sistema de Diseño Global
+   Paysandú, Uruguay
+   ===================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap');
+
+/* ── Variables de marca ──────────────────────────────── */
+:root {
+  /* Paleta de colores */
+  --color-nude:       #F5EDE6;
+  --color-nude-dark:  #EDD8C8;
+  --color-rose:       #D4A5A5;
+  --color-rose-deep:  #B07070;
+  --color-blush:      #F7E4E4;
+  --color-gold:       #C9A96E;
+  --color-gold-light: #E8D5B0;
+  --color-cream:      #FBF7F4;
+  --color-white:      #FFFFFF;
+  --color-charcoal:   #1A1A1A;
+  --color-text:       #2D2020;
+  --color-text-muted: #8B6E6E;
+  --color-border:     #E8D8D0;
+
+  /* Tipografías */
+  --font-serif:   'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-sans:    'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Espaciados */
+  --section-py: clamp(4rem, 8vw, 7rem);
+  --container:  min(90%, 1200px);
+
+  /* Sombras */
+  --shadow-sm:  0 2px 8px rgba(180, 130, 130, 0.12);
+  --shadow-md:  0 8px 32px rgba(180, 130, 130, 0.18);
+  --shadow-lg:  0 20px 60px rgba(180, 130, 130, 0.22);
+
+  /* Transiciones */
+  --transition: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --transition-fast: 0.2s ease;
+}
+
+/* ── Reset base ───────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--color-text);
+  background-color: var(--color-cream);
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+/* ── Tipografía ─────────────────────────────────────── */
+h1, h2, h3, h4 {
+  font-family: var(--font-serif);
+  line-height: 1.2;
+  font-weight: 600;
+  color: var(--color-charcoal);
+}
+
+h1 { font-size: clamp(2.4rem, 5vw, 4rem); }
+h2 { font-size: clamp(1.8rem, 3.5vw, 2.8rem); }
+h3 { font-size: clamp(1.3rem, 2.5vw, 1.8rem); }
+h4 { font-size: clamp(1.1rem, 1.8vw, 1.3rem); }
+
+p { max-width: 65ch; }
+
+/* ── Layout helpers ──────────────────────────────────── */
+.container {
+  width: var(--container);
+  margin-inline: auto;
+}
+
+.section-py {
+  padding-block: var(--section-py);
+}
+
+/* ── Botones ──────────────────────────────────────────── */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.9rem 2.2rem;
+  background: linear-gradient(135deg, var(--color-rose-deep), var(--color-rose));
+  color: var(--color-white);
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--color-gold), var(--color-rose-deep));
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+
+.btn-primary:hover::before { opacity: 1; }
+.btn-primary:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+.btn-primary span { position: relative; z-index: 1; }
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 2rem;
+  background: transparent;
+  color: var(--color-rose-deep);
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border: 1.5px solid var(--color-rose-deep);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn-secondary:hover {
+  background: var(--color-rose-deep);
+  color: var(--color-white);
+  transform: translateY(-2px);
+}
+
+.btn-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 1rem 2.5rem;
+  background: linear-gradient(135deg, #25D366, #128C7E);
+  color: var(--color-white);
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 2px;
+  transition: var(--transition);
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3);
+}
+
+.btn-whatsapp:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(37, 211, 102, 0.4);
+}
+
+/* ── Cards de producto ────────────────────────────────── */
+.product-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  overflow: hidden;
+  transition: var(--transition);
+  position: relative;
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+}
+
+.product-card .badge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background: var(--color-rose-deep);
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.7rem;
+  z-index: 2;
+}
+
+.product-card .badge-gold {
+  background: var(--color-gold);
+  color: var(--color-charcoal);
+}
+
+/* ── Sección decoradores ─────────────────────────────── */
+.section-label {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-rose-deep);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.section-label::before,
+.section-label::after {
+  content: '';
+  width: 2rem;
+  height: 1px;
+  background: var(--color-rose);
+}
+
+.divider-ornament {
+  text-align: center;
+  color: var(--color-gold);
+  font-size: 1.5rem;
+  letter-spacing: 0.5rem;
+  margin-block: 1rem;
+  opacity: 0.6;
+}
+
+/* ── Navbar ──────────────────────────────────────────── */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 0.9rem 0;
+  background: rgba(251, 247, 244, 0.98);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 1px 0 var(--color-border);
+}
+
+.navbar-logo {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--color-charcoal);
+  letter-spacing: 0.05em;
+}
+
+.navbar-logo span {
+  color: var(--color-rose-deep);
+}
+
+.nav-link {
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-charcoal);
+  transition: color var(--transition-fast);
+  position: relative;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--color-rose-deep);
+  transition: width var(--transition);
+}
+
+.nav-link:hover { color: var(--color-rose-deep); }
+.nav-link:hover::after { width: 100%; }
+
+/* ── Footer ──────────────────────────────────────────── */
+.footer {
+  background: var(--color-charcoal);
+  color: rgba(255,255,255,0.75);
+  font-family: var(--font-sans);
+}
+
+.footer-title {
+  font-family: var(--font-serif);
+  color: var(--color-gold-light);
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  letter-spacing: 0.05em;
+}
+
+.footer-link {
+  display: block;
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.6);
+  margin-bottom: 0.5rem;
+  transition: color var(--transition-fast);
+  letter-spacing: 0.03em;
+}
+
+.footer-link:hover { color: var(--color-gold-light); }
+
+/* ── Accordión FAQ ───────────────────────────────────── */
+.faq-item {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.faq-trigger {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.4rem 0;
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--color-charcoal);
+  gap: 1rem;
+  transition: color var(--transition-fast);
+}
+
+.faq-trigger:hover { color: var(--color-rose-deep); }
+
+.faq-icon {
+  flex-shrink: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 1.5px solid var(--color-rose);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-rose-deep);
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+.faq-trigger[aria-expanded="true"] .faq-icon {
+  background: var(--color-rose-deep);
+  border-color: var(--color-rose-deep);
+  color: white;
+  transform: rotate(45deg);
+}
+
+.faq-content {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.35s ease;
+}
+
+.faq-content.open {
+  grid-template-rows: 1fr;
+}
+
+.faq-inner {
+  overflow: hidden;
+  padding-bottom: 1.2rem;
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+  line-height: 1.8;
+}
+
+/* ── Stars rating ─────────────────────────────────────── */
+.stars {
+  display: flex;
+  gap: 0.15rem;
+  color: var(--color-gold);
+}
+
+/* ── Testimonial card ─────────────────────────────────── */
+.testimonial-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  padding: 2rem;
+  position: relative;
+}
+
+.testimonial-card::before {
+  content: '\201C';
+  font-family: var(--font-serif);
+  font-size: 5rem;
+  color: var(--color-nude-dark);
+  position: absolute;
+  top: -0.5rem;
+  left: 1.5rem;
+  line-height: 1;
+}
+
+/* ── Tag de categoría ─────────────────────────────────── */
+.category-tag {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.8rem;
+  border: 1px solid var(--color-border);
+  color: var(--color-text-muted);
+  transition: var(--transition-fast);
+}
+
+.category-tag:hover,
+.category-tag.active {
+  background: var(--color-charcoal);
+  border-color: var(--color-charcoal);
+  color: white;
+}
+
+/* ── GSAP animation helpers ──────────────────────────── */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.fade-in {
+  opacity: 0;
+}
+
+.scale-in {
+  opacity: 0;
+  transform: scale(0.95);
+}
+
+/* ── Gradientes decorativos ──────────────────────────── */
+.gradient-rose {
+  background: linear-gradient(135deg, var(--color-blush) 0%, var(--color-nude) 100%);
+}
+
+.gradient-gold {
+  background: linear-gradient(135deg, var(--color-nude-dark) 0%, var(--color-gold-light) 100%);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, var(--color-rose-deep), var(--color-gold));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Responsive helpers ──────────────────────────────── */
+@media (max-width: 768px) {
+  :root {
+    --section-py: clamp(3rem, 10vw, 5rem);
+  }
+
+  h1 { font-size: clamp(2rem, 8vw, 3rem); }
+  h2 { font-size: clamp(1.6rem, 6vw, 2.2rem); }
+
+  .container { width: min(95%, 1200px); }
+}
+
+/* ── Scrollbar ─────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--color-cream); }
+::-webkit-scrollbar-thumb { background: var(--color-rose); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--color-rose-deep); }
+
+/* ── Selección de texto ────────────────────────────────── */
+::selection {
+  background: var(--color-blush);
+  color: var(--color-rose-deep);
+}

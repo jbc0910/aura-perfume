@@ -1,0 +1,394 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+  ogImage?: string;
+}
+
+const {
+  title,
+  description,
+  canonical = Astro.url.href,
+  ogImage = '/imagenes/og-aura-perfumes.jpg',
+} = Astro.props;
+
+const siteName = 'Aura Perfumes Uruguay';
+const fullTitle = title.length > 60 ? title : `${title} | Aura Perfumes Uruguay`;
+---
+
+<!doctype html>
+<html lang="es-UY" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+
+  <!-- SEO Primario -->
+  <title>{fullTitle}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonical} />
+
+  <!-- Robots -->
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content={fullTitle} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={canonical} />
+  <meta property="og:site_name" content={siteName} />
+  <meta property="og:image" content={ogImage} />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="es_UY" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={fullTitle} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={ogImage} />
+
+  <!-- Geo / Local SEO Uruguay -->
+  <meta name="geo.region" content="UY-PA" />
+  <meta name="geo.placename" content="Paysandú, Uruguay" />
+  <meta name="language" content="Spanish" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <!-- Preconexión a fuentes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- Schema.org LocalBusiness + Product -->
+  <script type="application/ld+json">
+    {JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Aura Perfumes",
+      "description": "Perfumes originales para dama y caballero en Paysandú, Uruguay. Perfumes árabes, de diseñador y decants con envío a todo Uruguay.",
+      "url": "https://auraperfumes.uy",
+      "telephone": "+59899373372",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Paysandú",
+        "addressCountry": "UY"
+      },
+      "sameAs": [
+        "https://www.instagram.com/aurabellazayperfumes",
+        "https://www.tiktok.com/@velntina.manggini"
+      ],
+      "priceRange": "$$",
+      "openingHours": "Mo-Su 09:00-21:00",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+59899373372",
+        "contactType": "customer service",
+        "contactOption": "TollFree",
+        "availableLanguage": ["Spanish"]
+      }
+    })}
+  </script>
+</head>
+
+<body>
+  <!-- Navegación -->
+  <header>
+    <nav class="navbar navbar--solid" id="navbar" aria-label="Navegación principal">
+      <div class="container">
+        <div style="display:flex; align-items:center; justify-content:space-between; gap:2rem;">
+
+          <!-- Logo -->
+          <a href="/" class="navbar-logo" title="Aura Perfumes Uruguay - Inicio">
+            Aura <span>Perfumes</span>
+          </a>
+
+          <!-- Links desktop -->
+          <ul role="list" style="display:flex; align-items:center; gap:2rem; list-style:none;" class="nav-desktop">
+            <li>
+              <a href="/" class="nav-link" title="Inicio - Aura Perfumes Uruguay">Inicio</a>
+            </li>
+            <li>
+              <a href="/perfumes-arabes" class="nav-link" title="Comprar perfumes árabes en Uruguay">Perfumes Árabes</a>
+            </li>
+            <li>
+              <a href="/perfumes-disenador" class="nav-link" title="Perfumes de diseñador originales Uruguay">De Diseñador</a>
+            </li>
+            <li>
+              <a href="/nosotros" class="nav-link" title="Quiénes somos - Aura Perfumes">Nosotros</a>
+            </li>
+            <li>
+              <a href="/testimonios" class="nav-link" title="Testimonios de clientas de Aura Perfumes">Testimonios</a>
+            </li>
+            <li>
+              <a href="/faq" class="nav-link" title="Preguntas frecuentes sobre envíos y perfumes">FAQ</a>
+            </li>
+          </ul>
+
+          <!-- CTA WhatsApp -->
+          <a
+            href="https://wa.me/59899373372?text=Hola%20Aura%20Perfumes%2C%20me%20gustar%C3%ADa%20consultar%20sobre%20sus%20fragancias"
+            class="btn-primary"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Contactar a Aura Perfumes por WhatsApp"
+            style="font-size:0.78rem; padding:0.7rem 1.4rem;"
+          >
+            <span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="display:inline;vertical-align:middle;margin-right:4px">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+              </svg>
+              Consultá ahora
+            </span>
+          </a>
+
+          <!-- Hamburger mobile -->
+          <button
+            id="menu-toggle"
+            aria-label="Abrir menú de navegación"
+            aria-expanded="false"
+            aria-controls="mobile-menu"
+            style="display:none; background:none; border:none; cursor:pointer; padding:0.5rem;"
+          >
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <line x1="3" y1="6" x2="21" y2="6"/>
+              <line x1="3" y1="12" x2="21" y2="12"/>
+              <line x1="3" y1="18" x2="21" y2="18"/>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Menú mobile -->
+        <div id="mobile-menu" style="display:none; padding:1.5rem 0 1rem;" aria-label="Menú móvil">
+          <ul role="list" style="list-style:none; display:flex; flex-direction:column; gap:1rem;">
+            <li><a href="/" class="nav-link" title="Inicio">Inicio</a></li>
+            <li><a href="/perfumes-arabes" class="nav-link" title="Perfumes árabes Uruguay">Perfumes Árabes</a></li>
+            <li><a href="/perfumes-disenador" class="nav-link" title="Perfumes de diseñador">De Diseñador</a></li>
+            <li><a href="/nosotros" class="nav-link" title="Quiénes somos">Nosotros</a></li>
+            <li><a href="/testimonios" class="nav-link" title="Testimonios">Testimonios</a></li>
+            <li><a href="/faq" class="nav-link" title="Preguntas frecuentes">FAQ</a></li>
+            <li style="padding-top:0.5rem;">
+              <a href="https://wa.me/59899373372" class="btn-whatsapp" target="_blank" rel="noopener noreferrer" title="WhatsApp Aura Perfumes" style="justify-content:center; border-radius:2px;">
+                Consultá por WhatsApp
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Contenido principal de la página -->
+  <main id="main-content">
+    <slot />
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" aria-label="Pie de página Aura Perfumes">
+    <div class="container">
+      <div style="padding-block: 4rem 2rem; display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:3rem;">
+
+        <!-- Columna marca -->
+        <div>
+          <p style="font-family:var(--font-serif); font-size:1.6rem; font-weight:600; color:var(--color-gold-light); margin-bottom:1rem; letter-spacing:0.05em;">
+            Aura Perfumes
+          </p>
+          <p style="font-size:0.85rem; color:rgba(255,255,255,0.55); line-height:1.8; max-width:26ch;">
+            Perfumes para dama y caballero. Encontrá esa fragancia que defina tu personalidad.
+          </p>
+          <p style="font-size:0.8rem; color:rgba(255,255,255,0.4); margin-top:1rem;">
+            Paysandú, Uruguay
+          </p>
+        </div>
+
+        <!-- Navegación -->
+        <nav aria-label="Links del footer">
+          <p class="footer-title">Navegación</p>
+          <a href="/" class="footer-link" title="Inicio Aura Perfumes">Inicio</a>
+          <a href="/perfumes-arabes" class="footer-link" title="Perfumes árabes en Uruguay">Perfumes Árabes</a>
+          <a href="/perfumes-disenador" class="footer-link" title="Perfumes de diseñador originales">De Diseñador</a>
+          <a href="/nosotros" class="footer-link" title="Quiénes somos">Nosotros</a>
+          <a href="/testimonios" class="footer-link" title="Testimonios de clientes">Testimonios</a>
+          <a href="/faq" class="footer-link" title="Preguntas frecuentes">FAQ</a>
+        </nav>
+
+        <!-- Contacto -->
+        <div>
+          <p class="footer-title">Contacto</p>
+          <a
+            href="https://wa.me/59899373372?text=Hola%20Aura%20Perfumes%2C%20me%20gustar%C3%ADa%20consultar%20sobre%20sus%20fragancias"
+            class="footer-link"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="WhatsApp Aura Perfumes Uruguay"
+          >
+            WhatsApp: 099 373 372
+          </a>
+          <a
+            href="https://www.instagram.com/aurabellazayperfumes"
+            class="footer-link"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Instagram de Aura Perfumes"
+          >
+            @aurabellazayperfumes
+          </a>
+          <a
+            href="https://www.tiktok.com/@velntina.manggini"
+            class="footer-link"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="TikTok de Valentina Manggini"
+          >
+            @velntina.manggini
+          </a>
+        </div>
+
+        <!-- Categorías -->
+        <div>
+          <p class="footer-title">Fragancias</p>
+          <a href="/perfumes-arabes" class="footer-link" title="Comprar perfumes árabes Uruguay">Perfumes Árabes</a>
+          <a href="/perfumes-disenador" class="footer-link" title="Perfumes de diseñador originales">Diseñador</a>
+          <a href="/faq" class="footer-link" title="Consultar envíos Uruguay">Envíos a todo Uruguay</a>
+        </div>
+      </div>
+
+      <!-- Bottom bar -->
+      <div style="border-top:1px solid rgba(255,255,255,0.08); padding-block:1.5rem; display:flex; flex-wrap:wrap; gap:1rem; justify-content:space-between; align-items:center;">
+        <p style="font-size:0.78rem; color:rgba(255,255,255,0.35);">
+          &copy; {new Date().getFullYear()} Aura Perfumes · Paysandú, Uruguay. Todos los derechos reservados.
+        </p>
+        <div style="display:flex; gap:1.2rem;">
+          <a href="https://www.instagram.com/aurabellazayperfumes" target="_blank" rel="noopener noreferrer" title="Instagram Aura Perfumes" aria-label="Instagram">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.45)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+            </svg>
+          </a>
+          <a href="https://www.tiktok.com/@velntina.manggini" target="_blank" rel="noopener noreferrer" title="TikTok Aura Perfumes" aria-label="TikTok">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="rgba(255,255,255,0.45)" aria-hidden="true">
+              <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.75a4.85 4.85 0 0 1-1.01-.06z"/>
+            </svg>
+          </a>
+          <a href="https://wa.me/59899373372" target="_blank" rel="noopener noreferrer" title="WhatsApp Aura Perfumes" aria-label="WhatsApp">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="rgba(255,255,255,0.45)" aria-hidden="true">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // ── Navbar: siempre fondo sólido ──
+    // Sin efecto scroll; el fondo es siempre el color sólido de la marca.
+
+    // ── Menú mobile ──
+    const toggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    function isMobile() { return window.innerWidth < 900; }
+
+    function applyNavVisibility() {
+      const desktopNav = document.querySelector('.nav-desktop') as HTMLElement | null;
+      const ctaBtn = toggle?.previousElementSibling as HTMLElement | null;
+      if (isMobile()) {
+        if (desktopNav) desktopNav.style.display = 'none';
+        if (toggle) toggle.style.display = 'block';
+      } else {
+        if (desktopNav) desktopNav.style.display = 'flex';
+        if (toggle) toggle.style.display = 'none';
+        if (mobileMenu) mobileMenu.style.display = 'none';
+      }
+    }
+
+    applyNavVisibility();
+    window.addEventListener('resize', applyNavVisibility);
+
+    toggle?.addEventListener('click', () => {
+      const isOpen = mobileMenu?.style.display === 'block';
+      if (mobileMenu) mobileMenu.style.display = isOpen ? 'none' : 'block';
+      toggle.setAttribute('aria-expanded', String(!isOpen));
+    });
+
+    // ── FAQ Accordion ──
+    document.querySelectorAll('.faq-trigger').forEach((trigger) => {
+      trigger.addEventListener('click', () => {
+        const isExpanded = trigger.getAttribute('aria-expanded') === 'true';
+        // Cerrar todos
+        document.querySelectorAll('.faq-trigger').forEach(t => {
+          t.setAttribute('aria-expanded', 'false');
+          const content = t.nextElementSibling as HTMLElement | null;
+          if (content) content.classList.remove('open');
+        });
+        // Abrir el clickeado si estaba cerrado
+        if (!isExpanded) {
+          trigger.setAttribute('aria-expanded', 'true');
+          const content = trigger.nextElementSibling as HTMLElement | null;
+          if (content) content.classList.add('open');
+        }
+      });
+    });
+  </script>
+
+  <!-- GSAP init script -->
+  <script>
+    import gsap from 'gsap';
+    import { ScrollTrigger } from 'gsap/ScrollTrigger';
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Animaciones de entrada al hacer scroll
+    gsap.utils.toArray<HTMLElement>('.fade-in-up').forEach((el) => {
+      gsap.to(el, {
+        opacity: 1,
+        y: 0,
+        duration: 0.9,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: el,
+          start: 'top 88%',
+          once: true,
+        },
+      });
+    });
+
+    gsap.utils.toArray<HTMLElement>('.fade-in').forEach((el) => {
+      gsap.to(el, {
+        opacity: 1,
+        duration: 1,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: el,
+          start: 'top 88%',
+          once: true,
+        },
+      });
+    });
+
+    gsap.utils.toArray<HTMLElement>('.scale-in').forEach((el) => {
+      gsap.to(el, {
+        opacity: 1,
+        scale: 1,
+        duration: 0.8,
+        ease: 'back.out(1.5)',
+        scrollTrigger: {
+          trigger: el,
+          start: 'top 88%',
+          once: true,
+        },
+      });
+    });
+  </script>
+</body>
+</html>
+
+<style>
+  /* Aseguro que el nav-desktop se oculte en mobile por CSS también */
+  @media (max-width: 900px) {
+    .nav-desktop { display: none !important; }
+    #menu-toggle { display: block !important; }
+  }
+</style>
