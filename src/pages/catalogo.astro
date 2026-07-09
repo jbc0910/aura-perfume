@@ -1,0 +1,466 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+// Inventario de Perfumes de Aura Perfumes
+const perfumes = [
+  {
+    id: 'lattafa-yara',
+    nombre: 'Yara',
+    marca: 'Lattafa',
+    categoria: 'arabe',
+    genero: 'femenino',
+    notas: ['dulce', 'floral', 'vainilla'],
+    descripcion: 'Una fragancia dulce muy viral, con notas de mandarina, heliotropo, orquídea, notas tropicales y vainilla.',
+    estado: 'Agotándose',
+    decant: true
+  },
+  {
+    id: 'lattafa-khamrah',
+    nombre: 'Khamrah',
+    marca: 'Lattafa',
+    categoria: 'arabe',
+    genero: 'unisex',
+    notas: ['dulce', 'especiado', 'oriental', 'cálido'],
+    descripcion: 'Fragancia oriental lujosa y dulce con notas de canela, nuez moscada, dátiles, praliné y vainilla. Duración extrema.',
+    estado: 'Último stock',
+    decant: true
+  },
+  {
+    id: 'dior-sauvage',
+    nombre: 'Sauvage',
+    marca: 'Dior',
+    categoria: 'disenador',
+    genero: 'masculino',
+    notas: ['fresco', 'especiado', 'citrico', 'amaderado'],
+    descripcion: 'Un clásico moderno masculino, fresco y picante con notas de pimienta de Sichuan, bergamota de Calabria y ambroxan.',
+    estado: 'Disponible',
+    decant: true
+  },
+  {
+    id: 'ysl-libre',
+    nombre: 'Libre',
+    marca: 'Yves Saint Laurent',
+    categoria: 'disenador',
+    genero: 'femenino',
+    notas: ['floral', 'fresco', 'lavanda'],
+    descripcion: 'El perfume de la libertad. Notas de lavanda de Francia combinadas con la sensualidad del azahar de Marruecos y vainilla.',
+    estado: 'Disponible',
+    decant: true
+  },
+  {
+    id: 'club-de-nuit',
+    nombre: 'Club de Nuit Intense Man',
+    marca: 'Armaf',
+    categoria: 'arabe',
+    genero: 'masculino',
+    notas: ['fresco', 'citrico', 'amaderado'],
+    descripcion: 'Inspiración legendaria. Abre con notas cítricas intensas de limón y piña, dando paso a un fondo ahumado y amaderado.',
+    estado: 'Disponible',
+    decant: true
+  },
+  {
+    id: 'carolina-herrera-good-girl',
+    nombre: 'Good Girl',
+    marca: 'Carolina Herrera',
+    categoria: 'disenador',
+    genero: 'femenino',
+    notas: ['dulce', 'floral', 'cacao'],
+    descripcion: 'Audaz y sensual. Combina notas dulces de jazmín y nardo con el toque misterioso del haba tonka y el cacao.',
+    estado: 'Disponible',
+    decant: false
+  },
+  {
+    id: 'lattafa-asad',
+    nombre: 'Asad',
+    marca: 'Lattafa',
+    categoria: 'arabe',
+    genero: 'masculino',
+    notas: ['especiado', 'cálido', 'amaderado'],
+    descripcion: 'Un perfume árabe potente y masculino, conocido por sus notas de pimienta negra, piña, café, pachulí y vainilla.',
+    estado: 'Disponible',
+    decant: true
+  },
+  {
+    id: 'giorgio-armani-acqua-di-gio',
+    nombre: 'Acqua Di Gió',
+    marca: 'Giorgio Armani',
+    categoria: 'disenador',
+    genero: 'masculino',
+    notas: ['fresco', 'citrico', 'marino'],
+    descripcion: 'Frescúra marina icónica. Notas olfativas de bergamota de Calabria, neroli y caqui verde mezcladas con notas acuáticas.',
+    estado: 'Disponible',
+    decant: true
+  },
+  {
+    id: 'maison-alhambra-kismet',
+    nombre: 'Kismet Moska',
+    marca: 'Maison Alhambra',
+    categoria: 'arabe',
+    genero: 'unisex',
+    notas: ['amaderado', 'especiado', 'oriental'],
+    descripcion: 'Fragancia oriental y amaderada sofisticada con notas de nuez moscada, sándalo, cacao, pachulí y vainilla.',
+    estado: 'Disponible',
+    decant: false
+  },
+  {
+    id: 'paco-rabanne-one-million',
+    nombre: 'One Million',
+    marca: 'Paco Rabanne',
+    categoria: 'disenador',
+    genero: 'masculino',
+    notas: ['dulce', 'especiado', 'cuero'],
+    descripcion: 'Fragancia singular y ostentosa. Abre con mandarina y menta, evoluciona con canela y rosa, y cierra con cuero y ámbar.',
+    estado: 'Agotándose',
+    decant: true
+  },
+  {
+    id: 'lattafa-fakhar-rose',
+    nombre: 'Fakhar Rose',
+    marca: 'Lattafa',
+    categoria: 'arabe',
+    genero: 'femenino',
+    notas: ['floral', 'dulce', 'frutal'],
+    descripcion: 'Un bouquet floral encantador. Notas de azahar, jazmín, nardo, rosa con un toque jugoso de durazno y pera.',
+    estado: 'Disponible',
+    decant: true
+  },
+  {
+    id: 'versace-eros',
+    nombre: 'Eros',
+    marca: 'Versace',
+    categoria: 'disenador',
+    genero: 'masculino',
+    notas: ['fresco', 'dulce', 'menta'],
+    descripcion: 'El aroma del amor y la pasión. Notas vibrantes de menta, manzana verde y limón, con la calidez del haba tonka y vainilla.',
+    estado: 'Disponible',
+    decant: true
+  }
+];
+---
+
+<Layout
+  title="Catálogo Completo de Perfumes en Uruguay — Aura Perfumes"
+  description="Explorá nuestro catálogo de perfumes originales en Uruguay. Perfumes árabes, de diseñador y decants en Paysandú con envíos a todo el país. Buscá tu fragancia ideal."
+  canonical="https://auraperfumes.uy/catalogo"
+>
+
+  <!-- ── HERO CATÁLOGO ──────────────────────────────────────── -->
+  <section
+    aria-label="Catálogo de perfumes importados originales"
+    style="
+      background:linear-gradient(135deg, #1a0a0a 0%, #2d1515 100%);
+      padding-top:10rem;
+      padding-bottom:5rem;
+    "
+  >
+    <div class="container" style="text-align:center;">
+      <p class="fade-in" style="
+        font-size:0.72rem; font-weight:600; letter-spacing:0.3em;
+        text-transform:uppercase; color:var(--color-gold); margin-bottom:1.5rem;
+        display:flex; align-items:center; justify-content:center; gap:0.75rem;
+      ">
+        <span style="width:2rem; height:1px; background:var(--color-gold); display:inline-block;"></span>
+        Nuestra selección completa
+        <span style="width:2rem; height:1px; background:var(--color-gold); display:inline-block;"></span>
+      </p>
+      <h1 class="fade-in-up" style="color:#FAF0E6; margin-bottom:1.2rem; font-size:clamp(2.2rem, 5vw, 3.5rem);">
+        Catálogo de Perfumes
+      </h1>
+      <p class="fade-in-up" style="color:rgba(255,255,255,0.6); max-width:50ch; margin-inline:auto; line-height:1.8;">
+        Encontrá tu aroma ideal utilizando los filtros de etiquetas o el buscador. Hacemos envíos desde Paysandú a todo Uruguay.
+      </p>
+    </div>
+  </section>
+
+  <!-- ── SECCIÓN DE FILTROS Y PRODUCTOS ────────────────────────── -->
+  <section
+    id="catalogo-productos"
+    aria-label="Listado interactivo de fragancias disponibles"
+    style="background:var(--color-white); padding-block:var(--section-py);"
+  >
+    <div class="container">
+      
+      <!-- Panel de Controles: Búsqueda y Filtros -->
+      <div style="margin-bottom:4rem; display:flex; flex-direction:column; gap:2rem;">
+        
+        <!-- Barra de Búsqueda -->
+        <div class="fade-in" style="position:relative; max-width:600px; margin-inline:auto; width:100%;">
+          <label for="search-input" class="sr-only" style="position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); border:0;">
+            Buscar perfumes por nombre, marca o notas
+          </label>
+          <input
+            type="text"
+            id="search-input"
+            placeholder="Buscá por nombre, marca o notas (ej: Yara, Dior, dulce, fresco)..."
+            style="
+              width:100%;
+              padding:1.1rem 1.5rem 1.1rem 3.5rem;
+              border:1px solid var(--color-border);
+              background:var(--color-cream);
+              font-family:var(--font-sans);
+              font-size:0.95rem;
+              outline:none;
+              transition:border-color var(--transition-fast);
+            "
+          />
+          <!-- Icono de Búsqueda -->
+          <div style="position:absolute; left:1.2rem; top:50%; transform:translateY(-50%); color:var(--color-rose-deep);">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Grupo de Filtros por Categoría -->
+        <div class="fade-in" style="display:flex; flex-direction:column; gap:1rem; align-items:center;">
+          <p style="font-size:0.75rem; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:var(--color-text-muted);">
+            Filtrar por categoría
+          </p>
+          <div style="display:flex; flex-wrap:wrap; gap:0.6rem; justify-content:center;">
+            <button class="category-tag active filter-category-btn" data-category="all">Todos</button>
+            <button class="category-tag filter-category-btn" data-category="arabe">Perfumes Árabes</button>
+            <button class="category-tag filter-category-btn" data-category="disenador">De Diseñador</button>
+            <button class="category-tag filter-category-btn" data-category="decant">Permite Decants</button>
+          </div>
+        </div>
+
+        <!-- Grupo de Filtros por Notas / Género -->
+        <div class="fade-in" style="display:flex; flex-direction:column; gap:1rem; align-items:center;">
+          <p style="font-size:0.75rem; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:var(--color-text-muted);">
+            Filtrar por características y notas
+          </p>
+          <div style="display:flex; flex-wrap:wrap; gap:0.5rem; justify-content:center; max-width:800px;">
+            {['femenino', 'masculino', 'unisex', 'dulce', 'fresco', 'floral', 'amaderado', 'especiado'].map(tag => (
+              <button class="category-tag filter-tag-btn" data-tag={tag} style="font-size:0.68rem; padding:0.2rem 0.7rem;">
+                {tag.charAt(0).toUpperCase() + tag.slice(1)}
+              </button>
+            ))}
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Grid de Resultados -->
+      <div id="perfumes-grid" style="display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 1fr)); gap:2rem;">
+        {perfumes.map(p => {
+          // Crear un string con todas las keywords de búsqueda del perfume
+          const searchKeywords = `${p.nombre.toLowerCase()} ${p.marca.toLowerCase()} ${p.categoria} ${p.genero} ${p.notas.join(' ')}`;
+          const waMessage = encodeURIComponent(`Hola Aura Perfumes! Me gustaría consultar disponibilidad del perfume ${p.nombre} (${p.marca}) que vi en el catálogo web.`);
+          
+          return (
+            <div
+              class="product-card perfume-item fade-in-up"
+              data-category={p.categoria}
+              data-decant={p.decant ? "true" : "false"}
+              data-genero={p.genero}
+              data-keywords={searchKeywords}
+              data-notas={JSON.stringify(p.notas)}
+              style="display:flex; flex-direction:column; height:100%;"
+            >
+              <!-- Cabecera de la Tarjeta (Imagen decorativa) -->
+              <div style="
+                height:200px;
+                background:linear-gradient(135deg, var(--color-blush) 0%, var(--color-nude) 100%);
+                position:relative;
+                display:flex; align-items:center; justify-content:center;
+                color:var(--color-rose-deep);
+              ">
+                <!-- Badges -->
+                <span class="badge">{p.categoria === 'arabe' ? 'Árabe' : 'Diseñador'}</span>
+                
+                <span class="badge badge-gold" style="left:auto; right:1rem; font-size:0.65rem;">
+                  {p.estado}
+                </span>
+
+                <!-- Icono de Perfume Estilizado -->
+                <div style="color:var(--color-rose-deep); opacity:0.85;">
+                  <svg width="60" height="60" viewBox="0 0 100 120" fill="none" aria-hidden="true">
+                    <rect x="38" y="2" width="24" height="12" rx="3" fill="currentColor" opacity="0.6"/>
+                    <rect x="44" y="14" width="12" height="10" fill="currentColor" opacity="0.4"/>
+                    <rect x="20" y="24" width="60" height="80" rx="8" fill="currentColor" opacity="0.15" stroke="currentColor" stroke-opacity="0.5" stroke-width="1.5"/>
+                    <text x="50" y="70" text-anchor="middle" font-size="8" fill="currentColor" font-family="var(--font-serif)" font-weight="600">{p.marca.toUpperCase()}</text>
+                  </svg>
+                </div>
+              </div>
+
+              <!-- Contenido de la Tarjeta -->
+              <div style="padding:1.8rem; flex-grow:1; display:flex; flex-direction:column; justify-content:space-between; gap:1.5rem;">
+                <div>
+                  <!-- Marca -->
+                  <p style="font-size:0.72rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:var(--color-text-muted); margin-bottom:0.4rem;">
+                    {p.marca}
+                  </p>
+                  <!-- Nombre -->
+                  <h3 style="font-size:1.25rem; margin-bottom:0.6rem; line-height:1.3;">{p.nombre}</h3>
+                  <!-- Descripción -->
+                  <p style="font-size:0.85rem; color:var(--color-text-muted); line-height:1.6; margin-bottom:1rem;">
+                    {p.descripcion}
+                  </p>
+                  
+                  <!-- Tags del Perfume -->
+                  <div style="display:flex; flex-wrap:wrap; gap:0.4rem; margin-bottom:0.5rem;">
+                    <span style="font-size:0.65rem; padding:0.15rem 0.5rem; background:var(--color-cream); color:var(--color-rose-deep); font-weight:600; text-transform:uppercase; letter-spacing:0.05em;">
+                      {p.genero}
+                    </span>
+                    {p.notas.map(nota => (
+                      <span style="font-size:0.65rem; padding:0.15rem 0.5rem; background:rgba(201,169,110,0.1); color:var(--color-gold); font-weight:600; text-transform:uppercase; letter-spacing:0.05em;">
+                        {nota}
+                      </span>
+                    ))}
+                    {p.decant && (
+                      <span style="font-size:0.65rem; padding:0.15rem 0.5rem; background:#EDF8F4; color:#128C7E; font-weight:600; text-transform:uppercase; letter-spacing:0.05em;">
+                        Decant
+                      </span>
+                    )}
+                  </div>
+                </div>
+
+                <!-- Botón de consulta -->
+                <a
+                  href={`https://wa.me/59899373372?text=${waMessage}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn-primary"
+                  title={`Consultar stock de ${p.nombre} en WhatsApp`}
+                  style="width:100%; justify-content:center; padding:0.75rem 1.5rem; font-size:0.82rem;"
+                >
+                  <span>Consultar por WhatsApp</span>
+                </a>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+
+      <!-- Mensaje si no hay resultados -->
+      <div id="no-results" style="display:none; text-align:center; padding-block:5rem; max-width:400px; margin-inline:auto;">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--color-rose)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="margin-inline:auto; margin-bottom:1.5rem;">
+          <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="8" y1="11" x2="14" y2="11"/>
+        </svg>
+        <h3 style="font-size:1.15rem; margin-bottom:0.5rem;">No encontramos perfumes</h3>
+        <p style="font-size:0.88rem; color:var(--color-text-muted); line-height:1.6;">
+          Intentá buscando con otros términos o removiendo filtros de notas.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+</Layout>
+
+<!-- Script de Filtrado Cliente -->
+<script>
+  // Elementos del DOM
+  const searchInput = document.getElementById('search-input') as HTMLInputElement | null;
+  const perfumeItems = document.querySelectorAll('.perfume-item') as NodeListOf<HTMLElement>;
+  const categoryButtons = document.querySelectorAll('.filter-category-btn') as NodeListOf<HTMLElement>;
+  const tagButtons = document.querySelectorAll('.filter-tag-btn') as NodeListOf<HTMLElement>;
+  const noResultsMessage = document.getElementById('no-results') as HTMLElement | null;
+
+  // Estado del Filtrado
+  let activeSearch = '';
+  let activeCategory = 'all';
+  let activeTags: string[] = [];
+
+  // Función para aplicar todos los filtros combinados
+  function applyFilters() {
+    let visibleCount = 0;
+
+    perfumeItems.forEach(item => {
+      // 1. Filtro por búsqueda de texto
+      const keywords = item.getAttribute('data-keywords') || '';
+      const matchesSearch = keywords.includes(activeSearch.toLowerCase());
+
+      // 2. Filtro por categoría (Árabe, Diseñador, Decant)
+      const category = item.getAttribute('data-category') || '';
+      const hasDecant = item.getAttribute('data-decant') === 'true';
+      let matchesCategory = false;
+
+      if (activeCategory === 'all') {
+        matchesCategory = true;
+      } else if (activeCategory === 'decant') {
+        matchesCategory = hasDecant;
+      } else {
+        matchesCategory = category === activeCategory;
+      }
+
+      // 3. Filtro por etiquetas de notas y género (todos los tags seleccionados deben estar en el item)
+      const gender = item.getAttribute('data-genero') || '';
+      const notesJson = item.getAttribute('data-notas') || '[]';
+      const notes: string[] = JSON.parse(notesJson);
+      
+      let matchesTags = true;
+      if (activeTags.length > 0) {
+        matchesTags = activeTags.every(tag => {
+          return tag === gender || notes.includes(tag);
+        });
+      }
+
+      // Mostrar u ocultar el item
+      if (matchesSearch && matchesCategory && matchesTags) {
+        item.style.display = 'flex';
+        visibleCount++;
+      } else {
+        item.style.display = 'none';
+      }
+    });
+
+    // Mostrar u ocultar el mensaje de "no hay resultados"
+    if (noResultsMessage) {
+      noResultsMessage.style.display = visibleCount === 0 ? 'block' : 'none';
+    }
+  }
+
+  // Escucha del input de búsqueda
+  searchInput?.addEventListener('input', (e) => {
+    activeSearch = (e.target as HTMLInputElement).value.trim();
+    applyFilters();
+  });
+
+  // Escucha de los botones de categoría
+  categoryButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      // Remover clase active de todos
+      categoryButtons.forEach(b => b.classList.remove('active'));
+      // Añadir al botón clickeado
+      btn.classList.add('active');
+      activeCategory = btn.getAttribute('data-category') || 'all';
+      applyFilters();
+    });
+  });
+
+  // Escucha de los botones de etiquetas / notas
+  tagButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const tag = btn.getAttribute('data-tag') || '';
+      const isActive = btn.classList.contains('active');
+
+      if (isActive) {
+        btn.classList.remove('active');
+        activeTags = activeTags.filter(t => t !== tag);
+      } else {
+        btn.classList.add('active');
+        activeTags.push(tag);
+      }
+
+      applyFilters();
+    });
+  });
+
+  // Leer hash de la URL si el usuario viene redirigido con filtro (ej: /catalogo#arabe)
+  window.addEventListener('DOMContentLoaded', () => {
+    const hash = window.location.hash.replace('#', '');
+    if (hash === 'arabe' || hash === 'disenador' || hash === 'decant') {
+      const targetBtn = Array.from(categoryButtons).find(btn => btn.getAttribute('data-category') === hash);
+      if (targetBtn) {
+        targetBtn.click();
+      }
+    }
+  });
+</script>
+
+<style>
+  input:focus {
+    border-color: var(--color-rose) !important;
+  }
+</style>
