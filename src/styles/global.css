@@ -367,16 +367,19 @@ p { max-width: 65ch; }
 .faq-content {
   display: grid;
   grid-template-rows: 0fr;
-  transition: grid-template-rows 0.35s ease;
+  transition: grid-template-rows 0.35s ease, visibility 0.35s ease;
   overflow: hidden;
+  visibility: hidden;
 }
 
 .faq-content.open {
   grid-template-rows: 1fr;
+  visibility: visible;
 }
 
 .faq-inner {
   overflow: hidden;
+  min-height: 0;
   padding-bottom: 1.2rem;
   font-size: 0.95rem;
   color: var(--color-text-muted);
