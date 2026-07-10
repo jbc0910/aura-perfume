@@ -473,7 +473,91 @@ p { max-width: 65ch; }
   h2 { font-size: clamp(1.6rem, 6vw, 2.2rem); }
 
   .container { width: min(95%, 1200px); }
+
+  /* ─────────────────────────────────────────────────────
+     HERO — Colapsar a 1 columna y centrar todo
+     ───────────────────────────────────────────────────── */
+  .hero-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Ocultar la visual decorativa de la derecha */
+  .hero-visual {
+    display: none !important;
+  }
+
+  /* Centrar el bloque de texto */
+  .hero-text {
+    text-align: center;
+  }
+
+  /* Centrar el label "Paysandú, Uruguay" con sus líneas */
+  .hero-text p:first-child {
+    justify-content: center;
+  }
+
+  /* Centrar los botones del hero */
+  .hero-text > div {
+    justify-content: center;
+  }
+
+  /* Centrar las stats (+500 Clientas / 100% / 8h+) */
+  .hero-text > div:last-child {
+    justify-content: center;
+  }
+
+  /* ─────────────────────────────────────────────────────
+     SECCIÓN VIRALES / MÁS VENDIDOS — Colapsar y centrar
+     ───────────────────────────────────────────────────── */
+  .virales-grid {
+    grid-template-columns: 1fr !important;
+    text-align: center;
+  }
+
+  /* Centrar el section-label */
+  .virales-grid .section-label {
+    justify-content: center;
+  }
+
+  /* Centrar los botones de catálogo */
+  .virales-grid > div:first-child > div {
+    align-items: center;
+  }
+
+  /* Ocultar el mini-grid de tarjetas de perfumes en móvil
+     (los botones "Catálogo Árabes / Diseñador" son el CTA principal) */
+  .virales-grid > div:last-child {
+    display: none !important;
+  }
+
+  /* ─────────────────────────────────────────────────────
+     SECTION-LABEL — Centrar en todo el sitio en móvil
+     ───────────────────────────────────────────────────── */
+  .section-label {
+    justify-content: center;
+  }
+
+  /* ─────────────────────────────────────────────────────
+     FAQ SECTION DEL HOME — Colapsar a 1 columna
+     ───────────────────────────────────────────────────── */
+  .faq-home-grid {
+    grid-template-columns: 1fr !important;
+    text-align: center;
+  }
+
+  .faq-home-grid .section-label {
+    justify-content: center;
+  }
+
+  /* ─────────────────────────────────────────────────────
+     CONTACTO (faq.astro) — Colapsar a 1 columna
+     ───────────────────────────────────────────────────── */
+  #contacto > .container > div {
+    grid-template-columns: 1fr !important;
+  }
 }
+
+
 
 /* ── Scrollbar ─────────────────────────────────────────── */
 ::-webkit-scrollbar { width: 6px; }
