@@ -1,5 +1,11 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
+
+const stats = [
+  { num: "+500", label: "Clientas felices" },
+  { num: "100%", label: "Originales" },
+  { num: "8h+", label: "Duración" },
+];
 ---
 
 <Layout
@@ -7,7 +13,6 @@ import Layout from '../layouts/Layout.astro';
   description="Aura Perfumes en Paysandú, Uruguay. Perfumes árabes originales y fragancias de diseñador 100% auténticas con envío a todo el país. Encontrá tu fragancia ideal. WhatsApp: 099 373 372."
   canonical="https://auraperfumes.uy/"
 >
-
   <!-- ══════════════════════════════════════════════════════
        1. HERO SECTION
        ════════════════════════════════════════════════════ -->
@@ -24,26 +29,41 @@ import Layout from '../layouts/Layout.astro';
     "
   >
     <!-- Fondo decorativo -->
-    <div aria-hidden="true" style="
+    <div
+      aria-hidden="true"
+      style="
       position:absolute; inset:0;
       background: radial-gradient(ellipse at 70% 50%, rgba(180,100,100,0.15) 0%, transparent 60%),
                   radial-gradient(ellipse at 20% 80%, rgba(201,169,110,0.08) 0%, transparent 50%);
       pointer-events:none;
-    "></div>
+    "
+    >
+    </div>
 
     <!-- Patrón decorativo -->
-    <div aria-hidden="true" style="
+    <div
+      aria-hidden="true"
+      style="
       position:absolute; right:0; top:0; bottom:0; width:45%;
       background: linear-gradient(135deg, rgba(180,100,100,0.05) 0%, rgba(201,169,110,0.1) 100%);
       clip-path: polygon(15% 0%, 100% 0%, 100% 100%, 0% 100%);
-    "></div>
+    "
+    >
+    </div>
 
-    <div class="container" style="position:relative; z-index:1; padding-block:8rem 5rem;">
-      <div class="hero-grid" style="display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:center;">
-
+    <div
+      class="container"
+      style="position:relative; z-index:1; padding-block:8rem 5rem;"
+    >
+      <div
+        class="hero-grid"
+        style="display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:center;"
+      >
         <!-- Texto principal -->
         <div class="hero-text">
-          <p class="fade-in" style="
+          <p
+            class="fade-in"
+            style="
             font-family:var(--font-sans);
             font-size:0.72rem;
             font-weight:600;
@@ -54,8 +74,11 @@ import Layout from '../layouts/Layout.astro';
             display:flex;
             align-items:center;
             gap:0.75rem;
-          ">
-            <span style="width:2rem; height:1px; background:var(--color-gold); display:inline-block;"></span>
+          "
+          >
+            <span
+              style="width:2rem; height:1px; background:var(--color-gold); display:inline-block;"
+            ></span>
             Paysandú, Uruguay
           </p>
 
@@ -70,22 +93,31 @@ import Layout from '../layouts/Layout.astro';
               margin-bottom:1.5rem;
             "
           >
-            Perfumes Originales<br/>
-            <em style="color:var(--color-rose); font-style:italic;">que definen</em><br/>
+            Perfumes Originales<br />
+            <em style="color:var(--color-rose); font-style:italic;"
+              >que definen</em
+            ><br />
             tu personalidad
           </h1>
 
-          <p class="fade-in-up" style="
+          <p
+            class="fade-in-up"
+            style="
             font-size:1.05rem;
             color:rgba(255,255,255,0.65);
             line-height:1.8;
             max-width:44ch;
             margin-bottom:2.5rem;
-          ">
-            Fragancias árabes de alta duración y perfumes de diseñador 100% originales. Envíos a todo Uruguay desde Paysandú.
+          "
+          >
+            Fragancias árabes de alta duración y perfumes de diseñador 100%
+            originales. Envíos a todo Uruguay desde Paysandú.
           </p>
 
-          <div class="fade-in-up" style="display:flex; flex-wrap:wrap; gap:1rem; align-items:center;">
+          <div
+            class="fade-in-up"
+            style="display:flex; flex-wrap:wrap; gap:1rem; align-items:center;"
+          >
             <a
               href="https://wa.me/59899373372?text=Hola%20Aura%20Perfumes%2C%20me%20gustar%C3%ADa%20recibir%20asesor%C3%ADa%20para%20elegir%20mi%20fragancia"
               class="btn-whatsapp"
@@ -93,13 +125,24 @@ import Layout from '../layouts/Layout.astro';
               rel="noopener noreferrer"
               title="Recibir asesoría de perfumes por WhatsApp"
             >
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+                ></path>
               </svg>
               Asesorate gratis
             </a>
 
-            <a href="/catalogo" class="btn-secondary" title="Explorar catálogo completo de perfumes en Uruguay"
+            <a
+              href="/catalogo"
+              class="btn-secondary"
+              title="Explorar catálogo completo de perfumes en Uruguay"
               style="border-color:rgba(255,255,255,0.3); color:rgba(255,255,255,0.8);"
             >
               Ver Catálogo
@@ -107,30 +150,39 @@ import Layout from '../layouts/Layout.astro';
           </div>
 
           <!-- Stats -->
-          <div class="fade-in" style="
-            display:flex;
-            gap:2.5rem;
+          <div
+            class="fade-in"
+            style="
+            width:100%;
+            display:grid;
+            grid-template-columns:repeat(3, 1fr);
+            gap:1rem;
             margin-top:3.5rem;
             padding-top:2rem;
             border-top:1px solid rgba(255,255,255,0.08);
-          ">
-            {[
-              { num: '+500', label: 'Clientas felices' },
-              { num: '100%', label: 'Originales' },
-              { num: '8h+', label: 'Duración' },
-            ].map(stat => (
-              <div>
-                <p style="font-family:var(--font-serif); font-size:1.8rem; font-weight:700; color:var(--color-gold);">{stat.num}</p>
-                <p style="font-size:0.75rem; color:rgba(255,255,255,0.45); text-transform:uppercase; letter-spacing:0.1em;">{stat.label}</p>
-              </div>
-            ))}
+          "
+          >
+            {
+              stats.map((stat) => (
+                <div style="text-align:center;">
+                  <p style="font-family:var(--font-serif); font-size:1.8rem; font-weight:700; color:var(--color-gold);">
+                    {stat.num}
+                  </p>
+                  <p style="font-size:0.75rem; color:rgba(255,255,255,0.45); text-transform:uppercase; letter-spacing:0.1em;">
+                    {stat.label}
+                  </p>
+                </div>
+              ))
+            }
           </div>
         </div>
 
         <!-- Visual derecha -->
         <div class="hero-visual scale-in" style="position:relative;">
           <!-- Círculo decorativo grande -->
-          <div aria-hidden="true" style="
+          <div
+            aria-hidden="true"
+            style="
             position:absolute;
             width:380px; height:380px;
             border-radius:50%;
@@ -138,18 +190,25 @@ import Layout from '../layouts/Layout.astro';
             top:50%; left:50%;
             transform:translate(-50%,-50%);
             animation: pulse-ring 4s ease-in-out infinite;
-          "></div>
-          <div aria-hidden="true" style="
+          "
+          >
+          </div>
+          <div
+            aria-hidden="true"
+            style="
             position:absolute;
             width:300px; height:300px;
             border-radius:50%;
             border:1px solid rgba(201,169,110,0.1);
             top:50%; left:50%;
             transform:translate(-50%,-50%);
-          "></div>
+          "
+          >
+          </div>
 
           <!-- Tarjeta central -->
-          <div style="
+          <div
+            style="
             position:relative;
             background:rgba(255,255,255,0.04);
             border:1px solid rgba(201,169,110,0.2);
@@ -158,28 +217,94 @@ import Layout from '../layouts/Layout.astro';
             text-align:center;
             max-width:320px;
             margin:auto;
-          ">
+          "
+          >
             <!-- Icono perfume SVG -->
             <div style="margin-bottom:1.5rem; color:var(--color-gold);">
-              <svg width="80" height="80" viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="margin:auto;">
+              <svg
+                width="80"
+                height="80"
+                viewBox="0 0 100 120"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+                style="margin:auto;"
+              >
                 <!-- Tapita -->
-                <rect x="38" y="2" width="24" height="12" rx="3" fill="currentColor" opacity="0.6"/>
+                <rect
+                  x="38"
+                  y="2"
+                  width="24"
+                  height="12"
+                  rx="3"
+                  fill="currentColor"
+                  opacity="0.6"></rect>
                 <!-- Cuello -->
-                <rect x="44" y="14" width="12" height="10" fill="currentColor" opacity="0.5"/>
+                <rect
+                  x="44"
+                  y="14"
+                  width="12"
+                  height="10"
+                  fill="currentColor"
+                  opacity="0.5"></rect>
                 <!-- Cuerpo botella -->
-                <rect x="20" y="24" width="60" height="80" rx="8" fill="currentColor" opacity="0.15" stroke="currentColor" stroke-opacity="0.4" stroke-width="1.5"/>
+                <rect
+                  x="20"
+                  y="24"
+                  width="60"
+                  height="80"
+                  rx="8"
+                  fill="currentColor"
+                  opacity="0.15"
+                  stroke="currentColor"
+                  stroke-opacity="0.4"
+                  stroke-width="1.5"></rect>
                 <!-- Líquido -->
-                <rect x="22" y="60" width="56" height="42" rx="0 0 6 6" fill="currentColor" opacity="0.2"/>
+                <rect
+                  x="22"
+                  y="60"
+                  width="56"
+                  height="42"
+                  rx="0 0 6 6"
+                  fill="currentColor"
+                  opacity="0.2"></rect>
                 <!-- Etiqueta -->
-                <rect x="28" y="50" width="44" height="35" rx="2" fill="currentColor" opacity="0.1" stroke="currentColor" stroke-opacity="0.3" stroke-width="1"/>
-                <text x="50" y="72" text-anchor="middle" font-size="9" fill="currentColor" opacity="0.7" font-family="serif">AURA</text>
+                <rect
+                  x="28"
+                  y="50"
+                  width="44"
+                  height="35"
+                  rx="2"
+                  fill="currentColor"
+                  opacity="0.1"
+                  stroke="currentColor"
+                  stroke-opacity="0.3"
+                  stroke-width="1"></rect>
+                <text
+                  x="50"
+                  y="72"
+                  text-anchor="middle"
+                  font-size="9"
+                  fill="currentColor"
+                  opacity="0.7"
+                  font-family="serif">AURA</text
+                >
               </svg>
             </div>
-            <p style="font-family:var(--font-serif); font-size:1.3rem; color:#FAF0E6; margin-bottom:0.5rem; font-style:italic;">Fragancias de lujo</p>
-            <p style="font-size:0.8rem; color:rgba(255,255,255,0.45); letter-spacing:0.1em; text-transform:uppercase;">para dama & caballero</p>
+            <p
+              style="font-family:var(--font-serif); font-size:1.3rem; color:#FAF0E6; margin-bottom:0.5rem; font-style:italic;"
+            >
+              Fragancias de lujo
+            </p>
+            <p
+              style="font-size:0.8rem; color:rgba(255,255,255,0.45); letter-spacing:0.1em; text-transform:uppercase;"
+            >
+              para dama & caballero
+            </p>
 
             <!-- Badge flotante -->
-            <div style="
+            <div
+              style="
               position:absolute;
               top:-1rem; right:-1rem;
               background:var(--color-rose-deep);
@@ -189,22 +314,34 @@ import Layout from '../layouts/Layout.astro';
               letter-spacing:0.1em;
               text-transform:uppercase;
               padding:0.5rem 0.8rem;
-            ">Envíos UY</div>
+            "
+            >
+              Envíos UY
+            </div>
           </div>
         </div>
       </div>
     </div>
 
     <!-- Scroll indicator -->
-    <div aria-hidden="true" style="
+    <div
+      aria-hidden="true"
+      style="
       position:absolute;
       bottom:2rem;
       left:50%;
       transform:translateX(-50%);
       display:flex; flex-direction:column; align-items:center; gap:0.5rem;
-    ">
-      <span style="font-size:0.65rem; letter-spacing:0.2em; text-transform:uppercase; color:rgba(255,255,255,0.3);">Scroll</span>
-      <div style="width:1px; height:40px; background:linear-gradient(to bottom, rgba(201,169,110,0.6), transparent); animation:scroll-line 2s ease-in-out infinite;"></div>
+    "
+    >
+      <span
+        style="font-size:0.65rem; letter-spacing:0.2em; text-transform:uppercase; color:rgba(255,255,255,0.3);"
+        >Scroll</span
+      >
+      <div
+        style="width:1px; height:40px; background:linear-gradient(to bottom, rgba(201,169,110,0.6), transparent); animation:scroll-line 2s ease-in-out infinite;"
+      >
+      </div>
     </div>
   </section>
 
@@ -217,25 +354,51 @@ import Layout from '../layouts/Layout.astro';
     style="background:var(--color-white); padding-block:var(--section-py);"
   >
     <div class="container">
-      <div class="virales-grid" style="display:grid; grid-template-columns:1fr 1.5fr; gap:4rem; align-items:center;">
-
+      <div
+        class="virales-grid"
+        style="display:grid; grid-template-columns:1fr 1.5fr; gap:4rem; align-items:center;"
+      >
         <div>
-          <p class="section-label fade-in" style="margin-bottom:1rem;">Los más vendidos</p>
-          <h2 class="fade-in-up" style="margin-bottom:1.5rem;">
-            Fragancias virales<br/>
-            <em style="color:var(--color-rose-deep); font-style:italic;">más buscadas en Uruguay</em>
-          </h2>
-          <p class="fade-in-up" style="color:var(--color-text-muted); line-height:1.8; margin-bottom:2rem;">
-            Los perfumes más solicitados por su alta duración y proyección. Comprá original con envío rápido a todo Uruguay desde Paysandú.
+          <p class="section-label fade-in" style="margin-bottom:1rem;">
+            Los más vendidos
           </p>
-          <div class="fade-in" style="display:flex; flex-direction:column; gap:0.8rem;">
-            <a href="/catalogo#arabe" class="btn-primary" title="Ver catálogo completo de Perfumes Árabes" style="justify-content:center;">
+          <h2 class="fade-in-up" style="margin-bottom:1.5rem;">
+            Fragancias virales<br />
+            <em style="color:var(--color-rose-deep); font-style:italic;"
+              >más buscadas en Uruguay</em
+            >
+          </h2>
+          <p
+            class="fade-in-up"
+            style="color:var(--color-text-muted); line-height:1.8; margin-bottom:2rem;"
+          >
+            Los perfumes más solicitados por su alta duración y proyección.
+            Comprá original con envío rápido a todo Uruguay desde Paysandú.
+          </p>
+          <div
+            class="fade-in"
+            style="display:flex; flex-direction:column; gap:0.8rem;"
+          >
+            <a
+              href="/catalogo#arabe"
+              class="btn-primary"
+              title="Ver catálogo completo de Perfumes Árabes"
+              style="justify-content:center;"
+            >
               <span>Catálogo Perfumes Árabes</span>
             </a>
-            <a href="/catalogo#disenador" class="btn-secondary" title="Ver catálogo completo de Perfumes de Diseñador" style="justify-content:center; border-color:var(--color-rose-deep); color:var(--color-rose-deep);">
+            <a
+              href="/catalogo#disenador"
+              class="btn-secondary"
+              title="Ver catálogo completo de Perfumes de Diseñador"
+              style="justify-content:center; border-color:var(--color-rose-deep); color:var(--color-rose-deep);"
+            >
               <span>Catálogo De Diseñador</span>
             </a>
-            <a href="https://www.tiktok.com/@velntina.manggini" target="_blank" rel="noopener noreferrer"
+            <a
+              href="https://www.tiktok.com/@velntina.manggini"
+              target="_blank"
+              rel="noopener noreferrer"
               title="Ver reseñas de perfumes en TikTok de Valentina Manggini"
               style="
                 display:inline-flex; align-items:center; justify-content:center; gap:0.7rem;
@@ -248,8 +411,16 @@ import Layout from '../layouts/Layout.astro';
               onmouseover="this.style.borderColor='#fe2c55'; this.style.color='#fe2c55';"
               onmouseout="this.style.borderColor='var(--color-border)'; this.style.color='var(--color-charcoal)';"
             >
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.75a4.85 4.85 0 0 1-1.01-.06z"/>
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.75a4.85 4.85 0 0 1-1.01-.06z"
+                ></path>
               </svg>
               Reseñas en TikTok
             </a>
@@ -258,42 +429,100 @@ import Layout from '../layouts/Layout.astro';
 
         <!-- Grid de perfumes virales -->
         <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
-          {[
-            { name: 'Lattafa Yara', tipo: 'Árabe Viral', nota: 'Dulce, floral', badge: 'Agotándose' },
-            { name: 'Maison Alhambra', tipo: 'Árabe Premium', nota: 'Amaderado, especiado', badge: 'Disponible' },
-            { name: 'Club de Nuit', tipo: 'Inspirado', nota: 'Fresco, masculino', badge: 'Disponible' },
-            { name: 'Khamrah', tipo: 'Árabe Intenso', nota: 'Oriental, dulce', badge: 'Último stock' },
-          ].map((p, i) => (
-            <div class="fade-in-up" style={`
+          {
+            [
+              {
+                name: "Lattafa Yara",
+                tipo: "Árabe Viral",
+                nota: "Dulce, floral",
+                badge: "Agotándose",
+              },
+              {
+                name: "Maison Alhambra",
+                tipo: "Árabe Premium",
+                nota: "Amaderado, especiado",
+                badge: "Disponible",
+              },
+              {
+                name: "Club de Nuit",
+                tipo: "Inspirado",
+                nota: "Fresco, masculino",
+                badge: "Disponible",
+              },
+              {
+                name: "Khamrah",
+                tipo: "Árabe Intenso",
+                nota: "Oriental, dulce",
+                badge: "Último stock",
+              },
+            ].map((p, i) => (
+              <div
+                class="fade-in-up"
+                style={`
               background:var(--color-cream);
               border:1px solid var(--color-border);
               padding:1.5rem;
               transition:var(--transition);
               animation-delay:${i * 0.1}s;
-            `}>
-              <div style="
+            `}
+              >
+                <div
+                  style="
                 width:100%; height:80px;
                 background:linear-gradient(135deg, var(--color-blush), var(--color-nude-dark));
                 margin-bottom:1rem;
                 display:flex; align-items:center; justify-content:center;
                 color:var(--color-rose-deep);
-              ">
-                <svg width="32" height="32" viewBox="0 0 100 120" fill="currentColor" aria-hidden="true">
-                  <rect x="38" y="2" width="24" height="10" rx="2" opacity="0.6"/>
-                  <rect x="44" y="12" width="12" height="8" opacity="0.4"/>
-                  <rect x="20" y="20" width="60" height="80" rx="8" opacity="0.2" stroke="currentColor" stroke-opacity="0.4" stroke-width="2"/>
-                </svg>
-              </div>
-              <p style="
+              "
+                >
+                  <svg
+                    width="32"
+                    height="32"
+                    viewBox="0 0 100 120"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <rect
+                      x="38"
+                      y="2"
+                      width="24"
+                      height="10"
+                      rx="2"
+                      opacity="0.6"
+                    />
+                    <rect x="44" y="12" width="12" height="8" opacity="0.4" />
+                    <rect
+                      x="20"
+                      y="20"
+                      width="60"
+                      height="80"
+                      rx="8"
+                      opacity="0.2"
+                      stroke="currentColor"
+                      stroke-opacity="0.4"
+                      stroke-width="2"
+                    />
+                  </svg>
+                </div>
+                <p
+                  style="
                 font-size:0.65rem; font-weight:700; letter-spacing:0.12em;
                 text-transform:uppercase;
                 color:${p.badge === 'Agotándose' || p.badge === 'Último stock' ? 'var(--color-rose-deep)' : 'var(--color-text-muted)'};
                 margin-bottom:0.3rem;
-              ">{p.badge}</p>
-              <h4 style="font-size:0.95rem; margin-bottom:0.2rem;">{p.name}</h4>
-              <p style="font-size:0.75rem; color:var(--color-text-muted);">{p.nota}</p>
-            </div>
-          ))}
+              "
+                >
+                  {p.badge}
+                </p>
+                <h4 style="font-size:0.95rem; margin-bottom:0.2rem;">
+                  {p.name}
+                </h4>
+                <p style="font-size:0.75rem; color:var(--color-text-muted);">
+                  {p.nota}
+                </p>
+              </div>
+            ))
+          }
         </div>
       </div>
     </div>
@@ -309,88 +538,136 @@ import Layout from '../layouts/Layout.astro';
   >
     <div class="container">
       <div style="text-align:center; margin-bottom:4rem;">
-        <p class="section-label fade-in" style="justify-content:center; margin-bottom:1rem;">Por qué elegirnos</p>
+        <p
+          class="section-label fade-in"
+          style="justify-content:center; margin-bottom:1rem;"
+        >
+          Por qué elegirnos
+        </p>
         <h2 class="fade-in-up">Tu confianza es nuestra prioridad</h2>
       </div>
 
-      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:2rem; margin-bottom:5rem;">
-        {[
-          {
-            icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>`,
-            title: '100% Originales',
-            text: 'Todos nuestros perfumes son garantizados originales. Sin imitaciones, sin engaños.',
-          },
-          {
-            icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>`,
-            title: 'Asesoría personalizada',
-            text: 'Te ayudamos a encontrar tu fragancia ideal según tu personalidad y ocasión.',
-          },
-          {
-            icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>`,
-            title: 'Envíos a todo Uruguay',
-            text: 'Despachamos desde Paysandú a todo el país con embalaje seguro y discreto.',
-          },
-          {
-            icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>`,
-            title: 'Alta duración',
-            text: 'Nuestros perfumes árabes tienen concentraciones premium de 8 a 12 horas de duración.',
-          },
-        ].map(item => (
-          <div class="scale-in" style="text-align:center; padding:2rem 1.5rem;">
-            <div style="
+      <div
+        style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:2rem; margin-bottom:5rem;"
+      >
+        {
+          [
+            {
+              icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>`,
+              title: "100% Originales",
+              text: "Todos nuestros perfumes son garantizados originales. Sin imitaciones, sin engaños.",
+            },
+            {
+              icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>`,
+              title: "Asesoría personalizada",
+              text: "Te ayudamos a encontrar tu fragancia ideal según tu personalidad y ocasión.",
+            },
+            {
+              icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>`,
+              title: "Envíos a todo Uruguay",
+              text: "Despachamos desde Paysandú a todo el país con embalaje seguro y discreto.",
+            },
+            {
+              icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>`,
+              title: "Alta duración",
+              text: "Nuestros perfumes árabes tienen concentraciones premium de 8 a 12 horas de duración.",
+            },
+          ].map((item) => (
+            <div
+              class="scale-in"
+              style="text-align:center; padding:2rem 1.5rem;"
+            >
+              <div
+                style="
               width:64px; height:64px;
               border-radius:50%;
               background:var(--color-blush);
               display:flex; align-items:center; justify-content:center;
               margin:0 auto 1.2rem;
               color:var(--color-rose-deep);
-            " set:html={item.icon}></div>
-            <h3 style="font-size:1rem; margin-bottom:0.6rem; font-weight:600;">{item.title}</h3>
-            <p style="font-size:0.87rem; color:var(--color-text-muted); line-height:1.7;">{item.text}</p>
-          </div>
-        ))}
+            "
+                set:html={item.icon}
+              />
+              <h3 style="font-size:1rem; margin-bottom:0.6rem; font-weight:600;">
+                {item.title}
+              </h3>
+              <p style="font-size:0.87rem; color:var(--color-text-muted); line-height:1.7;">
+                {item.text}
+              </p>
+            </div>
+          ))
+        }
       </div>
 
       <!-- Testimonios strip -->
       <div style="margin-bottom:3rem;">
-        <p class="section-label fade-in" style="justify-content:center; margin-bottom:2.5rem;">Lo que dicen nuestras clientas</p>
-        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:1.5rem;">
-          {[
-            {
-              name: 'Valentina R.',
-              location: 'Montevideo',
-              text: 'El perfume llegó perfectamente empaquetado y huele exactamente igual al de la marca. Lo recomiendo 100%.',
-              stars: 5,
-              product: 'Lattafa Yara',
-            },
-            {
-              name: 'Camila M.',
-              location: 'Salto',
-              text: 'Valentina me ayudó a elegir mi fragancia ideal. Me duró más de 8 horas y recibí muchos elogios ese día.',
-              stars: 5,
-              product: 'Perfume Árabe',
-            },
-            {
-              name: 'Sofía L.',
-              location: 'Paysandú',
-              text: 'Primera compra online y quedé encantada. Valentina me asesoro perfectamente para elegir mi fragancia. La calidad es increible.',
-              stars: 5,
-              product: 'Perfume de Diseñador',
-            },
-          ].map(t => (
-            <div class="testimonial-card fade-in-up">
-              <div class="stars" style="margin-bottom:0.8rem; margin-top:1.5rem;" aria-label={`${t.stars} de 5 estrellas`}>
-                {Array(t.stars).fill(null).map(() => (
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                ))}
-              </div>
-              <p style="font-size:0.92rem; color:var(--color-text-muted); line-height:1.8; margin-bottom:1.2rem;">"{t.text}"</p>
-              <div style="display:flex; justify-content:space-between; align-items:center;">
-                <div>
-                  <p style="font-weight:600; font-size:0.88rem; color:var(--color-charcoal);">{t.name}</p>
-                  <p style="font-size:0.75rem; color:var(--color-text-muted);">{t.location}, Uruguay</p>
+        <p
+          class="section-label fade-in"
+          style="justify-content:center; margin-bottom:2.5rem;"
+        >
+          Lo que dicen nuestras clientas
+        </p>
+        <div
+          style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:1.5rem;"
+        >
+          {
+            [
+              {
+                name: "Valentina R.",
+                location: "Montevideo",
+                text: "El perfume llegó perfectamente empaquetado y huele exactamente igual al de la marca. Lo recomiendo 100%.",
+                stars: 5,
+                product: "Lattafa Yara",
+              },
+              {
+                name: "Camila M.",
+                location: "Salto",
+                text: "Valentina me ayudó a elegir mi fragancia ideal. Me duró más de 8 horas y recibí muchos elogios ese día.",
+                stars: 5,
+                product: "Perfume Árabe",
+              },
+              {
+                name: "Sofía L.",
+                location: "Paysandú",
+                text: "Primera compra online y quedé encantada. Valentina me asesoro perfectamente para elegir mi fragancia. La calidad es increible.",
+                stars: 5,
+                product: "Perfume de Diseñador",
+              },
+            ].map((t) => (
+              <div class="testimonial-card fade-in-up">
+                <div
+                  class="stars"
+                  style="margin-bottom:0.8rem; margin-top:1.5rem;"
+                  aria-label={`${t.stars} de 5 estrellas`}
+                >
+                  {Array(t.stars)
+                    .fill(null)
+                    .map(() => (
+                      <svg
+                        width="14"
+                        height="14"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                        aria-hidden="true"
+                      >
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                      </svg>
+                    ))}
                 </div>
-                <span style="
+                <p style="font-size:0.92rem; color:var(--color-text-muted); line-height:1.8; margin-bottom:1.2rem;">
+                  "{t.text}"
+                </p>
+                <div style="display:flex; justify-content:space-between; align-items:center;">
+                  <div>
+                    <p style="font-weight:600; font-size:0.88rem; color:var(--color-charcoal);">
+                      {t.name}
+                    </p>
+                    <p style="font-size:0.75rem; color:var(--color-text-muted);">
+                      {t.location}, Uruguay
+                    </p>
+                  </div>
+                  <span
+                    style="
                   font-size:0.68rem;
                   font-weight:600;
                   letter-spacing:0.08em;
@@ -398,15 +675,23 @@ import Layout from '../layouts/Layout.astro';
                   color:var(--color-rose-deep);
                   background:var(--color-blush);
                   padding:0.25rem 0.6rem;
-                ">{t.product}</span>
+                "
+                  >
+                    {t.product}
+                  </span>
+                </div>
               </div>
-            </div>
-          ))}
+            ))
+          }
         </div>
       </div>
 
       <div class="fade-in" style="text-align:center;">
-        <a href="/testimonios" class="btn-secondary" title="Ver todos los testimonios de Aura Perfumes">
+        <a
+          href="/testimonios"
+          class="btn-secondary"
+          title="Ver todos los testimonios de Aura Perfumes"
+        >
           Ver más testimonios
         </a>
       </div>
@@ -423,90 +708,225 @@ import Layout from '../layouts/Layout.astro';
   >
     <div class="container">
       <div style="text-align:center; margin-bottom:4rem;">
-        <p class="section-label fade-in" style="justify-content:center; margin-bottom:1rem;">Nuestras categorías</p>
+        <p
+          class="section-label fade-in"
+          style="justify-content:center; margin-bottom:1rem;"
+        >
+          Nuestras categorías
+        </p>
         <h2 class="fade-in-up">Encontrá tu fragancia perfecta</h2>
-        <p class="fade-in-up" style="color:var(--color-text-muted); margin:1rem auto 0; max-width:50ch;">
-          Desde perfumes árabes que duran todo el día hasta fragancias de diseñador 100% originales con envío a todo Uruguay.
+        <p
+          class="fade-in-up"
+          style="color:var(--color-text-muted); margin:1rem auto 0; max-width:50ch;"
+        >
+          Desde perfumes árabes que duran todo el día hasta fragancias de
+          diseñador 100% originales con envío a todo Uruguay.
         </p>
       </div>
 
-      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:2rem; max-width:900px; margin-inline:auto;">
-
+      <div
+        style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:2rem; max-width:900px; margin-inline:auto;"
+      >
         <!-- Card Perfumes Árabes -->
-        <a href="/catalogo#arabe" class="product-card fade-in-up" title="Comprar perfumes árabes originales en Uruguay" style="display:block; text-decoration:none;">
-          <div style="
+        <a
+          href="/catalogo#arabe"
+          class="product-card fade-in-up"
+          title="Comprar perfumes árabes originales en Uruguay"
+          style="display:block; text-decoration:none;"
+        >
+          <div
+            style="
             height:220px;
             background:linear-gradient(135deg, #2d1515 0%, #4a2020 50%, #3d2500 100%);
             position:relative;
             overflow:hidden;
             display:flex; align-items:center; justify-content:center;
-          ">
+          "
+          >
             <span class="badge">Más vendidos</span>
             <div style="text-align:center; color:var(--color-gold);">
-              <svg width="70" height="70" viewBox="0 0 100 120" fill="none" aria-hidden="true">
-                <rect x="38" y="2" width="24" height="12" rx="3" fill="currentColor" opacity="0.7"/>
-                <rect x="44" y="14" width="12" height="10" fill="currentColor" opacity="0.5"/>
-                <rect x="20" y="24" width="60" height="80" rx="8" fill="currentColor" opacity="0.2" stroke="currentColor" stroke-opacity="0.5" stroke-width="2"/>
-                <rect x="28" y="50" width="44" height="35" rx="2" fill="currentColor" opacity="0.15"/>
+              <svg
+                width="70"
+                height="70"
+                viewBox="0 0 100 120"
+                fill="none"
+                aria-hidden="true"
+              >
+                <rect
+                  x="38"
+                  y="2"
+                  width="24"
+                  height="12"
+                  rx="3"
+                  fill="currentColor"
+                  opacity="0.7"></rect>
+                <rect
+                  x="44"
+                  y="14"
+                  width="12"
+                  height="10"
+                  fill="currentColor"
+                  opacity="0.5"></rect>
+                <rect
+                  x="20"
+                  y="24"
+                  width="60"
+                  height="80"
+                  rx="8"
+                  fill="currentColor"
+                  opacity="0.2"
+                  stroke="currentColor"
+                  stroke-opacity="0.5"
+                  stroke-width="2"></rect>
+                <rect
+                  x="28"
+                  y="50"
+                  width="44"
+                  height="35"
+                  rx="2"
+                  fill="currentColor"
+                  opacity="0.15"></rect>
               </svg>
             </div>
-            <div aria-hidden="true" style="
+            <div
+              aria-hidden="true"
+              style="
               position:absolute; inset:0;
               background:radial-gradient(circle at 70% 30%, rgba(201,169,110,0.15), transparent);
-            "></div>
+            "
+            >
+            </div>
           </div>
           <div style="padding:1.8rem;">
-            <p style="font-size:0.7rem; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; color:var(--color-rose-deep); margin-bottom:0.5rem;">Alta concentración</p>
-            <h3 style="margin-bottom:0.8rem; font-size:1.4rem;">Perfumes Árabes</h3>
-            <p style="font-size:0.88rem; color:var(--color-text-muted); line-height:1.7; margin-bottom:1.5rem;">
-              Lattafa, Maison Alhambra y las marcas más virales del mundo árabe. Alta duración, proyección espectacular y lujo accesible.
+            <p
+              style="font-size:0.7rem; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; color:var(--color-rose-deep); margin-bottom:0.5rem;"
+            >
+              Alta concentración
             </p>
-            <span style="
+            <h3 style="margin-bottom:0.8rem; font-size:1.4rem;">
+              Perfumes Árabes
+            </h3>
+            <p
+              style="font-size:0.88rem; color:var(--color-text-muted); line-height:1.7; margin-bottom:1.5rem;"
+            >
+              Lattafa, Maison Alhambra y las marcas más virales del mundo árabe.
+              Alta duración, proyección espectacular y lujo accesible.
+            </p>
+            <span
+              style="
               display:inline-flex; align-items:center; gap:0.4rem;
               font-size:0.78rem; font-weight:600; letter-spacing:0.1em;
               text-transform:uppercase; color:var(--color-rose-deep);
-            ">
+            "
+            >
               Ver fragancias
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"></path></svg
+              >
             </span>
           </div>
         </a>
 
         <!-- Card Diseñador -->
-        <a href="/catalogo#disenador" class="product-card fade-in-up" title="Perfumes de diseñador originales Uruguay" style="display:block; text-decoration:none;">
-          <div style="
+        <a
+          href="/catalogo#disenador"
+          class="product-card fade-in-up"
+          title="Perfumes de diseñador originales Uruguay"
+          style="display:block; text-decoration:none;"
+        >
+          <div
+            style="
             height:220px;
             background:linear-gradient(135deg, #0d0d1a 0%, #1a1535 50%, #0a0d1a 100%);
             position:relative;
             overflow:hidden;
             display:flex; align-items:center; justify-content:center;
-          ">
+          "
+          >
             <span class="badge badge-gold">Originales 100%</span>
             <div style="text-align:center; color:rgba(180,170,220,0.8);">
-              <svg width="70" height="70" viewBox="0 0 100 120" fill="none" aria-hidden="true">
-                <rect x="38" y="2" width="24" height="12" rx="3" fill="currentColor" opacity="0.7"/>
-                <rect x="44" y="14" width="12" height="10" fill="currentColor" opacity="0.5"/>
-                <rect x="15" y="24" width="70" height="85" rx="10" fill="currentColor" opacity="0.15" stroke="currentColor" stroke-opacity="0.4" stroke-width="2"/>
+              <svg
+                width="70"
+                height="70"
+                viewBox="0 0 100 120"
+                fill="none"
+                aria-hidden="true"
+              >
+                <rect
+                  x="38"
+                  y="2"
+                  width="24"
+                  height="12"
+                  rx="3"
+                  fill="currentColor"
+                  opacity="0.7"></rect>
+                <rect
+                  x="44"
+                  y="14"
+                  width="12"
+                  height="10"
+                  fill="currentColor"
+                  opacity="0.5"></rect>
+                <rect
+                  x="15"
+                  y="24"
+                  width="70"
+                  height="85"
+                  rx="10"
+                  fill="currentColor"
+                  opacity="0.15"
+                  stroke="currentColor"
+                  stroke-opacity="0.4"
+                  stroke-width="2"></rect>
               </svg>
             </div>
-            <div aria-hidden="true" style="
+            <div
+              aria-hidden="true"
+              style="
               position:absolute; inset:0;
               background:radial-gradient(circle at 30% 70%, rgba(150,130,200,0.1), transparent);
-            "></div>
+            "
+            >
+            </div>
           </div>
           <div style="padding:1.8rem;">
-            <p style="font-size:0.7rem; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; color:var(--color-rose-deep); margin-bottom:0.5rem;">Marcas premium</p>
-            <h3 style="margin-bottom:0.8rem; font-size:1.4rem;">Perfumes de Diseñador</h3>
-            <p style="font-size:0.88rem; color:var(--color-text-muted); line-height:1.7; margin-bottom:1.5rem;">
-              Las marcas que conocés, 100% originales y al mejor precio de Uruguay. Consultá disponibilidad por WhatsApp.
+            <p
+              style="font-size:0.7rem; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; color:var(--color-rose-deep); margin-bottom:0.5rem;"
+            >
+              Marcas premium
             </p>
-            <span style="
+            <h3 style="margin-bottom:0.8rem; font-size:1.4rem;">
+              Perfumes de Diseñador
+            </h3>
+            <p
+              style="font-size:0.88rem; color:var(--color-text-muted); line-height:1.7; margin-bottom:1.5rem;"
+            >
+              Las marcas que conocés, 100% originales y al mejor precio de
+              Uruguay. Consultá disponibilidad por WhatsApp.
+            </p>
+            <span
+              style="
               display:inline-flex; align-items:center; gap:0.4rem;
               font-size:0.78rem; font-weight:600; letter-spacing:0.1em;
               text-transform:uppercase; color:var(--color-rose-deep);
-            ">
+            "
+            >
               Ver fragancias
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"></path></svg
+              >
             </span>
           </div>
         </a>
@@ -530,31 +950,53 @@ import Layout from '../layouts/Layout.astro';
       overflow:hidden;
     "
   >
-    <div aria-hidden="true" style="
+    <div
+      aria-hidden="true"
+      style="
       position:absolute; inset:0;
       background:radial-gradient(ellipse at 50% 50%, rgba(201,169,110,0.08) 0%, transparent 70%);
       pointer-events:none;
-    "></div>
+    "
+    >
+    </div>
     <div class="container" style="position:relative; z-index:1;">
-      <p class="fade-in" style="
+      <p
+        class="fade-in"
+        style="
         font-size:0.72rem; font-weight:600; letter-spacing:0.3em;
         text-transform:uppercase; color:var(--color-gold); margin-bottom:1.5rem;
         display:flex; align-items:center; justify-content:center; gap:0.75rem;
-      ">
-        <span style="width:2rem; height:1px; background:var(--color-gold); display:inline-block;"></span>
+      "
+      >
+        <span
+          style="width:2rem; height:1px; background:var(--color-gold); display:inline-block;"
+        ></span>
         Oferta especial
-        <span style="width:2rem; height:1px; background:var(--color-gold); display:inline-block;"></span>
+        <span
+          style="width:2rem; height:1px; background:var(--color-gold); display:inline-block;"
+        ></span>
       </p>
 
-      <h2 class="fade-in-up" style="color:#FAF0E6; max-width:18ch; margin:0 auto 1.5rem; font-size:clamp(2rem, 4vw, 3.2rem);">
+      <h2
+        class="fade-in-up"
+        style="color:#FAF0E6; max-width:18ch; margin:0 auto 1.5rem; font-size:clamp(2rem, 4vw, 3.2rem);"
+      >
         Tu primer pedido con envío bonificado
       </h2>
 
-      <p class="fade-in-up" style="color:rgba(255,255,255,0.6); max-width:45ch; margin:0 auto 3rem; line-height:1.8;">
-        Escribinos por WhatsApp mencionando que llegaste desde nuestra web y coordinamos el envío a tu puerta sin costo adicional. Válido esta semana.
+      <p
+        class="fade-in-up"
+        style="color:rgba(255,255,255,0.6); max-width:45ch; margin:0 auto 3rem; line-height:1.8;"
+      >
+        Escribinos por WhatsApp mencionando que llegaste desde nuestra web y
+        coordinamos el envío a tu puerta sin costo adicional. Válido esta
+        semana.
       </p>
 
-      <div class="fade-in" style="display:flex; flex-wrap:wrap; justify-content:center; gap:1rem;">
+      <div
+        class="fade-in"
+        style="display:flex; flex-wrap:wrap; justify-content:center; gap:1rem;"
+      >
         <a
           href="https://wa.me/59899373372?text=Hola%21%20Vi%20su%20p%C3%A1gina%20web%20y%20quiero%20aprovechar%20el%20env%C3%ADo%20bonificado%20en%20mi%20primer%20pedido"
           class="btn-whatsapp"
@@ -563,8 +1005,16 @@ import Layout from '../layouts/Layout.astro';
           title="Pedir perfumes con envío bonificado - Aura Perfumes Uruguay"
           style="font-size:1rem; padding:1.1rem 2.8rem;"
         >
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            aria-hidden="true"
+          >
+            <path
+              d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+            ></path>
           </svg>
           Aprovechar oferta
         </a>
@@ -581,74 +1031,114 @@ import Layout from '../layouts/Layout.astro';
     style="background:var(--color-cream); padding-block:var(--section-py);"
   >
     <div class="container">
-      <div class="faq-home-grid" style="display:grid; grid-template-columns:1fr 1.5fr; gap:4rem; align-items:start;">
-
+      <div
+        class="faq-home-grid"
+        style="display:grid; grid-template-columns:1fr 1.5fr; gap:4rem; align-items:start;"
+      >
         <div>
           <p class="section-label fade-in" style="margin-bottom:1rem;">FAQ</p>
-          <h2 class="fade-in-up" style="margin-bottom:1.5rem;">Preguntas frecuentes</h2>
-          <p class="fade-in-up" style="color:var(--color-text-muted); line-height:1.8; margin-bottom:2rem;">
-            ¿Tenés dudas sobre nuestros perfumes, envíos o métodos de pago? Acá respondemos las consultas más comunes.
+          <h2 class="fade-in-up" style="margin-bottom:1.5rem;">
+            Preguntas frecuentes
+          </h2>
+          <p
+            class="fade-in-up"
+            style="color:var(--color-text-muted); line-height:1.8; margin-bottom:2rem;"
+          >
+            ¿Tenés dudas sobre nuestros perfumes, envíos o métodos de pago? Acá
+            respondemos las consultas más comunes.
           </p>
-          <a href="/faq" class="btn-secondary" title="Ver todas las preguntas frecuentes">Ver todas las preguntas</a>
+          <a
+            href="/faq"
+            class="btn-secondary"
+            title="Ver todas las preguntas frecuentes"
+            >Ver todas las preguntas</a
+          >
         </div>
 
         <div class="fade-in-up">
-          {[
-            {
-              q: '¿Los perfumes son 100% originales?',
-              a: 'Sí, absolutamente. Todos nuestros perfumes son 100% originales y auténticos. Trabajamos directamente con distribuidores oficiales y podemos mostrar las facturas y certificados de autenticidad de cada fragancia.',
-            },
-            {
-              q: '¿Realizan envíos a todo Uruguay? ¿Cuánto demora?',
-              a: 'Sí, enviamos a todo el territorio uruguayo desde Paysandú. Los envíos demoran entre 2 y 5 días hábiles dependiendo de la localidad. Trabajamos con OCA, Correo Uruguayo y otros servicios de paquetería.',
-            },
-            {
-              q: '¿Cuánto duran los perfumes árabes en la piel?',
-              a: 'Nuestros perfumes árabes tienen una concentración de aceites muy alta (tipo extrait de parfum), por lo que su duración en piel va de las 8 a las 12 horas. En ropa pueden perdurar días enteros.',
-            },
-            {
-              q: '¿Qué métodos de pago aceptan?',
-              a: 'Aceptamos transferencia bancaria, Mercado Pago, efectivo (para retiro en Paysandú) y coordinamos los detalles por WhatsApp. No aceptamos contra entrega por el momento.',
-            },
-            {
-              q: '¿Puedo recibir asesoría personalizada antes de comprar?',
-              a: 'Por supuesto. Valentina te asesora personalmente por WhatsApp, explicándote cómo huele cada fragancia, cuánto dura y cuál se adapta mejor a tu personalidad y estilo.',
-            },
-          ].map((item, i) => (
-            <div class="faq-item" itemscope itemtype="https://schema.org/Question">
-              <button
-                class="faq-trigger"
-                aria-expanded="false"
-                id={`faq-q-${i}`}
-                aria-controls={`faq-a-${i}`}
-                itemprop="name"
+          {
+            [
+              {
+                q: "¿Los perfumes son 100% originales?",
+                a: "Sí, absolutamente. Todos nuestros perfumes son 100% originales y auténticos. Trabajamos directamente con distribuidores oficiales y podemos mostrar las facturas y certificados de autenticidad de cada fragancia.",
+              },
+              {
+                q: "¿Realizan envíos a todo Uruguay? ¿Cuánto demora?",
+                a: "Sí, enviamos a todo el territorio uruguayo desde Paysandú. Los envíos demoran entre 2 y 5 días hábiles dependiendo de la localidad. Trabajamos con OCA, Correo Uruguayo y otros servicios de paquetería.",
+              },
+              {
+                q: "¿Cuánto duran los perfumes árabes en la piel?",
+                a: "Nuestros perfumes árabes tienen una concentración de aceites muy alta (tipo extrait de parfum), por lo que su duración en piel va de las 8 a las 12 horas. En ropa pueden perdurar días enteros.",
+              },
+              {
+                q: "¿Qué métodos de pago aceptan?",
+                a: "Aceptamos transferencia bancaria, Mercado Pago, efectivo (para retiro en Paysandú) y coordinamos los detalles por WhatsApp. No aceptamos contra entrega por el momento.",
+              },
+              {
+                q: "¿Puedo recibir asesoría personalizada antes de comprar?",
+                a: "Por supuesto. Valentina te asesora personalmente por WhatsApp, explicándote cómo huele cada fragancia, cuánto dura y cuál se adapta mejor a tu personalidad y estilo.",
+              },
+            ].map((item, i) => (
+              <div
+                class="faq-item"
+                itemscope
+                itemtype="https://schema.org/Question"
               >
-                {item.q}
-                <span class="faq-icon" aria-hidden="true">+</span>
-              </button>
-              <div class="faq-content" id={`faq-a-${i}`} role="region" aria-labelledby={`faq-q-${i}`} itemscope itemtype="https://schema.org/Answer">
-                <div class="faq-inner" itemprop="text">
-                  {item.a}
+                <button
+                  class="faq-trigger"
+                  aria-expanded="false"
+                  id={`faq-q-${i}`}
+                  aria-controls={`faq-a-${i}`}
+                  itemprop="name"
+                >
+                  {item.q}
+                  <span class="faq-icon" aria-hidden="true">
+                    +
+                  </span>
+                </button>
+                <div
+                  class="faq-content"
+                  id={`faq-a-${i}`}
+                  role="region"
+                  aria-labelledby={`faq-q-${i}`}
+                  itemscope
+                  itemtype="https://schema.org/Answer"
+                >
+                  <div class="faq-inner" itemprop="text">
+                    {item.a}
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))
+          }
         </div>
       </div>
     </div>
   </section>
-
 </Layout>
 
 <style>
   @keyframes pulse-ring {
-    0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
-    50% { transform: translate(-50%, -50%) scale(1.04); opacity: 0.6; }
+    0%,
+    100% {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: translate(-50%, -50%) scale(1.04);
+      opacity: 0.6;
+    }
   }
 
   @keyframes scroll-line {
-    0% { transform: scaleY(1); opacity: 1; }
-    100% { transform: scaleY(0.3); opacity: 0; }
+    0% {
+      transform: scaleY(1);
+      opacity: 1;
+    }
+    100% {
+      transform: scaleY(0.3);
+      opacity: 0;
+    }
   }
 
   /* Mobile responsive */

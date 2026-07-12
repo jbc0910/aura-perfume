@@ -127,7 +127,7 @@ const fullTitle = title.length > 60 ? title : `${title} | Aura Perfumes Uruguay`
           <!-- CTA WhatsApp -->
           <a
             href="https://wa.me/59899373372?text=Hola%20Aura%20Perfumes%2C%20me%20gustar%C3%ADa%20consultar%20sobre%20sus%20fragancias"
-            class="btn-primary"
+            class="btn-primary header-cta"
             target="_blank"
             rel="noopener noreferrer"
             title="Contactar a Aura Perfumes por WhatsApp"
@@ -289,12 +289,14 @@ const fullTitle = title.length > 60 ? title : `${title} | Aura Perfumes Uruguay`
 
     function applyNavVisibility() {
       const desktopNav = document.querySelector('.nav-desktop') as HTMLElement | null;
-      const ctaBtn = toggle?.previousElementSibling as HTMLElement | null;
+      const ctaBtn = document.querySelector('.header-cta') as HTMLElement | null;
       if (isMobile()) {
         if (desktopNav) desktopNav.style.display = 'none';
+        if (ctaBtn) ctaBtn.style.display = 'none';
         if (toggle) toggle.style.display = 'block';
       } else {
         if (desktopNav) desktopNav.style.display = 'flex';
+        if (ctaBtn) ctaBtn.style.display = 'inline-flex';
         if (toggle) toggle.style.display = 'none';
         if (mobileMenu) mobileMenu.style.display = 'none';
       }
@@ -385,5 +387,6 @@ const fullTitle = title.length > 60 ? title : `${title} | Aura Perfumes Uruguay`
   @media (max-width: 900px) {
     .nav-desktop { display: none !important; }
     #menu-toggle { display: block !important; }
+    .header-cta { display: none !important; }
   }
 </style>
